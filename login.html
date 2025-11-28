@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Denny Herfansya">
+    <meta name="description" content="For Storify">
+    <title>Login</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+    <!-- Link CSS from normalize.css v8.0.1 -->
+    <link rel="stylesheet" type="text/css" href="css/main.chunk.css">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" type="text/css" href="css/mystyle.login.css">
+
+    <!-- Link fontGoogles -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;display=swap" rel="stylesheet">
+
+    <!-- Link Bootstrap Icon -->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <div>
+        <div class="container-d">
+
+            <!-- Script bagian left content -->
+            <div class="tw-min-h-screen tw-bg-white tw-px-6 tw-py-5 left-content-d">
+                <a href="register.html"
+                    class="tw-flex tw-items-center tw-mb-6 sm:tw-mb-12 hover:tw-no-underline tw-text-primary hover:tw-text-primary-lighter tw-text-sm">
+                    <i class="bi bi-arrow-left"></i>
+                    <span class="tw-block tw-pl-2">Register</span>
+                </a>
+                <h3 class="tw-text-primary tw-text-lg tw-font-bold">Login</h3>
+                <p class="tw-text-primary tw-mb-10">Masuk dengan menggunakan email anda dan password anda</p>
+                <form action="admin.html" autocomplete="off" novalidate>
+                    <div class="tw-mb-4 shadow-d">
+                        <div class="tw-relative">
+                            <input type="email" id="email" placeholder="alamat@email.com" class="form-input input-d">
+                            <label class="form-label">Email</label>
+                        </div>
+                        <div class="tw-relative">
+                            <div class="tw-relative">
+                                <input type="password" id="password" placeholder="Masukkan password"
+                                    class="form-password input-d">
+                                <label class="form-label">Password</label>
+                            </div>
+                            <img src="images/eye.svg" id="icon-login" alt="" class="icon-eye">
+                        </div>
+                    </div>
+                    <div class="tw-mb-5 forgot-d">
+
+                        <!-- Script validasi error -->
+                        <p class="tw-text-red-600 tw-text-xs tw-mb-0">Email harus diisi.</p>
+                        <p class="tw-text-red-600 tw-text-xs tw-mb-0">Password harus diisi.</p>
+
+                        <!-- Script validasi success -->
+                        <p class="tw-text-green-600 tw-text-xs tw-mb-0">Anda telah terdaftar. Silahkan Login</p>
+
+                        <div class="tw-mt-4 tw-flex tw-justify-between">
+                            <div class="tw-text-xs tw-text-abu checkbox-d">
+                                <input type="checkbox" name="remember">
+                                <label>
+                                    Ingat saya
+                                </label>
+                            </div>
+                            <a href="lupa-password.html"
+                                class="tw-text-xs tw-text-primary hover:tw-text-primary-lighter hover:tw-no-underline">Lupa
+                                password?</a>
+                        </div>
+                        <div class="tw-my-4">
+                            <button type="submit" class="btn btn-primary mr-4">Login</button>
+                            <button type="reset" class="btn btn-default">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Script bagian right content -->
+            <div class="right-content-d">
+                <div class="login-background-d right-content-d"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="5e21a29fae5ef848579f15e8-|49" defer=""></script>
+
+    <script type="text/javascript" src="js/javascript-icon-password.js">
+    </script>
+
+</body>
+
+</html>
