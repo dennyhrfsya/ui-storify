@@ -1,0 +1,85 @@
+// Prefix
+$prefix: "dx-";
+
+// Variable Warna
+$putih: #fff;
+$abu-abu: #535353;
+$abu-abu-text: #a0a4a8;
+$biru: #0652dd;
+$biru-muda: #266ef4;
+$merah: #e03244;
+$merah-text: #e02424;
+$hijau: #32ba7c;
+$hijau-text: #32ba7c;
+$kuning: #f1c40f;
+$warna-success: #edf7f3;
+$warna-warning: #fcf5e3;
+$warna-error: #fbe9eb;
+$warna-bg: #fafafa;
+
+// Map Warna
+$color: (
+  "putih": $putih,
+  "abu-abu": $abu-abu,
+  "biru": $biru,
+  "biru-muda": $biru-muda,
+  "merah": $merah,
+  "hijau": $hijau,
+  "kuning": $kuning,
+);
+// Warna background
+$color-bg: (
+  "warna-bg": $warna-bg,
+);
+// Map warna teks
+$color-text: (
+  "abu-abu-text": $abu-abu-text,
+  "merah-text": $merah-text,
+  "hijau-text": $hijau-text,
+);
+// Warna notif
+$color-notif: (
+  "warna-success": $warna-success,
+  "warna-warning": $warna-warning,
+  "warna-error": $warna-error,
+);
+
+// Tipografi
+$font-family-base: "Quicksand", sans-serif;
+
+// Ukuran teks
+$text-size: (
+  xs: 0.75rem,
+  sm: 0.875rem,
+  base: 1rem,
+  lg: 1.125rem,
+  xl: 1.25rem,
+  "2xl": 1.5rem,
+  "3xl": 1.875rem,
+);
+
+// Font Style
+// Ketebalan font
+$font-weight-thin: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+// Gaya font
+$font-style-italic: italic;
+$font-style-normal: normal;
+
+// Map Ketebalan font
+$font-weights: (
+  "thin": $font-weight-thin,
+  "light": $font-weight-light,
+  "regular": $font-weight-regular,
+  "medium": $font-weight-medium,
+  "semi-bold": $font-weight-semi-bold,
+  "bold": $font-weight-bold,
+  "black": $font-weight-black,
+);
