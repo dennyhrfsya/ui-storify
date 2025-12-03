@@ -31,6 +31,7 @@ main {
 }
 
 .sidebar {
+  height: 100%;
   background-color: rgb(6, 82, 221);
   position: fixed;
   width: 180px;
@@ -39,6 +40,26 @@ main {
   display: none;
   transition: 0.5s;
   overflow-x: hidden;
+}
+
+.sidebar.sidebar--closed {
+  width: 0; /* Sidebar hilang */
+}
+
+.section.sidebar--closed {
+  margin-left: 0; /* Konten bergerak ke kiri penuh */
+}
+
+/* Tambahkan gaya untuk menyembunyikan konten sidebar saat tertutup */
+.sidebar.sidebar--closed * {
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+/* Tombol Buka (openBtn) */
+#openBtn {
+  /* ... gaya tampilan tombol buka ... */
+  /* Tampilan (display: none/block) dikontrol oleh JS */
 }
 
 .sidebar .li {

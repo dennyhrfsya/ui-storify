@@ -32,8 +32,8 @@
 			<aside id="sidebar" class="sidebar">
 				<a id="closeBtn"
 					class="tw-flex tw-w-full tw-justify-center tw-text-abu-light tw-text-sm tw-py-5 tw-items-center hover:tw-no-underline d-close-btn">
-					<img id="arrowIcon" src="images/left-arrow-dx-white.svg">
-					<span id="btnText" class="tw-block tw-pl-2">Tutup</span>
+					<img src="images/left-arrow-dx-white.svg">
+					<span class="tw-block tw-pl-2">Tutup</span>
 				</a>
 				<nav>
 					<ul>
@@ -70,7 +70,13 @@
 
 					<!-- Script bagian logo untuk Tablet dan Hp -->
 					<img src="images/logo.png" alt="Logo" class="md-img img-tb">
-					<h1 class="tw-hidden md:tw-block tw-text-primary tw-font-bold tw-text-lg tw-mb-0">Dashboard</h1>
+					<div class="tw-flex">
+						<a id="openBtn" class="tw-text-primary tw-text-sm hover:tw-text-primary">
+							Buka
+							<img src="images/left-arrow.svg" class="tw-inline-block" style="transform: rotate(180deg);">
+						</a>
+
+					</div>
 					<div>
 						<table>
 							<thead>
@@ -131,6 +137,8 @@
 
 				<div class="content-wrap">
 					<div class="container-fluid">
+						<h1 class="tw-hidden md:tw-block tw-text-primary tw-font-bold tw-text-lg">Dashboard
+						</h1>
 						<!-- Script bagian Dashboard-->
 						<div class="notice notice-information">
 							<div class="notice-icon" style="--max-width: 10rem;">
