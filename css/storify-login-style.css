@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 0 solid #d2d6dc;
 }
 
 body {
@@ -11,23 +12,20 @@ body {
   margin: 0;
 }
 
+input::placeholder {
+  color: #a0a4a8;
+  opacity: 1;
+}
+
 .dx-no-underline {
   text-decoration: none;
+}
+.dx-no-underline .hover\:dx-no-underline:hover {
+  margin-bottom: 7rem;
 }
 
 .dx-container {
   display: flex;
-}
-
-@media (min-width: 512px) {
-  .dx-container .dx-content {
-    max-width: 384px;
-    padding: 2.5rem 2rem;
-  }
-}
-
-.dx-min-h-screen {
-  height: 100vh;
 }
 
 .dx-px-1 {
@@ -774,6 +772,42 @@ body {
   margin-right: 3.75rem;
 }
 
+.dx-margin-top-0 {
+  margin-top: 0;
+}
+
+.dx-margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.dx-margin-left-0 {
+  margin-left: 0;
+}
+
+.dx-margin-right-0 {
+  margin-right: 0;
+}
+
+.dx-padding-top-0 {
+  padding-top: 0;
+}
+
+.dx-padding-bottom-0 {
+  padding-bottom: 0;
+}
+
+.dx-padding-left-0 {
+  padding-left: 0;
+}
+
+.dx-padding-right-0 {
+  padding-right: 0;
+}
+
+.dx-mb-30 {
+  margin-bottom: 7rem;
+}
+
 .dx-text-xs {
   font-size: 0.75rem;
 }
@@ -830,6 +864,12 @@ body {
   color: #f1c40f;
 }
 
+.hover\:dx-biru-muda:hover {
+  color: #266ef4;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
 .dx-abu-abu-text {
   color: #a0a4a8;
 }
@@ -842,6 +882,10 @@ body {
   color: #32ba7c;
 }
 
+.dx-biru-text {
+  color: #0652dd;
+}
+
 .dx-warna-success {
   color: #edf7f3;
 }
@@ -852,10 +896,6 @@ body {
 
 .dx-warna-error {
   color: #fbe9eb;
-}
-
-.dx-warna-bg {
-  color: #fafafa;
 }
 
 .dx-thin {
@@ -890,6 +930,247 @@ body {
   font-style: italic;
 }
 
+.dx-form-label {
+  position: absolute;
+  top: 5px;
+  left: 1rem;
+  margin-bottom: 0;
+  pointer-events: none;
+  cursor: text;
+  transition: all 0.2s ease-in-out;
+  padding-bottom: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: #535353;
+}
+
+.dx-input {
+  border-bottom: 0px;
+}
+
+.dx-form-input {
+  height: 49px;
+  width: 100%;
+  padding: 22px 1rem 5px;
+  font-size: 12px;
+  color: #0652dd;
+  border-radius: 0;
+  border: 1px solid rgb(239, 238, 237);
+  outline: none;
+}
+
+.dx-form-password,
+input[type=text] {
+  height: 49px;
+  width: 100%;
+  padding: 22px 1rem 5px;
+  font-size: 12px;
+  color: #0652dd;
+  border-radius: 0;
+  border: 1px solid rgb(239, 238, 237);
+  outline: none;
+}
+
+.dx-form-input:focus,
+.dx-form-password:focus,
+.dx-form-password-show:focus {
+  box-shadow: #0652dd 4px 0px 0px 0px inset;
+}
+
 .dx-shadow {
   box-shadow: rgba(17, 17, 17, 0.1) 0px 1px 8px !important;
-}/*# sourceMappingURL=storify-style.css.map */
+}
+
+.dx-icon-eye {
+  position: absolute;
+  right: 1rem;
+  top: 17px;
+}
+
+.dx-min-height-1 {
+  min-height: 1rem;
+}
+
+.dx-min-height-2 {
+  min-height: 2rem;
+}
+
+.dx-min-height-3 {
+  min-height: 3rem;
+}
+
+.dx-min-height-4 {
+  min-height: 4rem;
+}
+
+.dx-min-height-5 {
+  min-height: 5rem;
+}
+
+.dx-min-height-6 {
+  min-height: 6rem;
+}
+
+.dx-min-height-7 {
+  min-height: 7rem;
+}
+
+.dx-min-height-8 {
+  min-height: 8rem;
+}
+
+.dx-min-height-9 {
+  min-height: 9rem;
+}
+
+.dx-min-height-10 {
+  min-height: 10rem;
+}
+
+.dx-btn-primary {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  padding: 0 1rem;
+  min-width: 100px;
+  min-height: 30px;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  color: #fff;
+  background-color: #0652dd;
+  min-height: 35px;
+}
+.dx-btn-primary:hover {
+  color: #fff;
+  background-color: #266ef4;
+  border-color: #266ef4;
+}
+
+.dx-btn-secondary {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  padding: 0 1rem;
+  min-width: 100px;
+  min-height: 30px;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  color: #0652dd;
+  background-color: #fff;
+  border-color: #0652dd;
+  min-height: 35px;
+}
+.dx-btn-secondary:hover {
+  color: #fff;
+  background-color: #266ef4;
+  border-color: #266ef4;
+}
+
+.dx-checkbox input {
+  position: absolute;
+  top: 0.25rem;
+  opacity: 0;
+  z-index: 1;
+}
+.dx-checkbox label {
+  display: inline-block;
+  padding-left: 1.75em;
+}
+.dx-checkbox label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  top: 0.25em;
+  left: 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.dx-checkbox input:checked ~ label::before {
+  border-color: #0652dd;
+}
+.dx-checkbox input:checked ~ label::after {
+  content: "";
+  position: absolute;
+  width: 0.3125em;
+  height: 0.625em;
+  left: 0.325em;
+  top: 0.325em;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: #0652dd;
+  transform: rotate(45deg);
+}
+.dx-checkbox input:focus-visible ~ label::before {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(6, 82, 221, 0.35);
+}
+
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+.dx-login-background {
+  background-repeat: no-repeat;
+  background-image: url("../images/bg-login-storify.png");
+  background-size: 800px;
+  background-position: center bottom;
+}
+
+@media (min-width: 512px) {
+  .dx-container .dx-right-content {
+    background-color: #0652dd;
+    flex: 1 1 0%;
+  }
+  .dx-container .dx-right-content .dx-login-background {
+    flex: 1 1 0%;
+    height: 100vh;
+    position: sticky;
+    top: 0px;
+    background-size: cover;
+  }
+  .dx-container .dx-right-content .dx-min-h-screen {
+    height: 100vh;
+  }
+}
+@media (max-width: 512px) {
+  .dx-min-h-screen {
+    height: 100vh;
+  }
+}
+@media (min-width: 512px) {
+  .dx-container .dx-left-content {
+    max-width: 384px;
+    padding: 2.5rem 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .dx-login-background {
+    background-size: contain !important;
+    background-position: center !important;
+  }
+}/*# sourceMappingURL=storify-login-style.css.map */

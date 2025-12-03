@@ -1,20 +1,19 @@
-(function() {
-var input = document.getElementById('password'),
-        icon = document.getElementById('icon-login'),
-        myImage = document.querySelector('#icon-login');
+//* Function scope
+const togglePassword = function () {
+  const input = document.getElementById("password");
+  const icon = document.getElementById("icon-login");
+  const myImage = document.querySelector("#icon-login");
 
-       icon.onclick = function () {
-
-         if(input.className == 'form-password input-d') {
-            input.setAttribute('type', 'text');
-            myImage.setAttribute ('src', 'images/eye-slash.svg');
-            input.className = 'form-password-show css';
-
-           } else {
-              input.setAttribute('type', 'password');
-              myImage.setAttribute ('src', 'images/eye.svg');
-              input.className = 'form-password input-d';
-
-        }
-       }
-  })();
+  // Function expression untuk toggle password
+  icon.onclick = function () {
+    if (input.type === "password") {
+      input.type = "text";
+      myImage.src = "images/eye-slash.svg";
+    } else {
+      input.type = "password";
+      myImage.src = "images/eye.svg";
+    }
+  };
+};
+// Panggil fungsi setelah didefinisikan
+togglePassword();

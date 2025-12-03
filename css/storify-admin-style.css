@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0 solid #d2d6dc;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #fafafa;
+  color: #535353;
+  margin: 0;
+}
+
+.dx-container {
+  max-width: 100%;
+  padding: 0;
+  position: relative;
+  -webkit-box-align: 1;
+  flex-grow: 1;
+}
+
+.dx-sidebar {
+  background-color: #0652dd;
+  position: fixed;
+  width: 180px;
+  top: 0;
+  bottom: 0;
+  display: none;
+  transition: 0.5s;
+  overflow-x: hidden;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .dx-sidebar {
+    display: block;
+  }
+}/*# sourceMappingURL=storify-admin-style.css.map */

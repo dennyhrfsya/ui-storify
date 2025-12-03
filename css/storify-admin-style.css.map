@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../scss/_base-admin.scss","../scss/_variables.scss","../scss/_mixins.scss"],"names":[],"mappings":"AAGA;EACE;EACA;EACA;EACA;;;AAGF;EACE,aCyCiB;EDxCjB,kBCKS;EDJT,OCRQ;EDSR;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAIF;EEqHE,kBDxIK;ECyIL;EACA,ODjBc;ECkBd;EACA;EACA;EACA,YDnBmB;ECoBnB;EACA;;;AFzHF;EACE;IACE","file":"storify-admin-style.css"}

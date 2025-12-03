@@ -1,7 +1,7 @@
-// Prefix
+//* Prefix
 $prefix: "dx-";
 
-// Variable Warna
+//* Variable Warna
 $putih: #fff;
 $abu-abu: #535353;
 $abu-abu-text: #a0a4a8;
@@ -16,6 +16,7 @@ $warna-success: #edf7f3;
 $warna-warning: #fcf5e3;
 $warna-error: #fbe9eb;
 $warna-bg: #fafafa;
+$warna-root: #d2d6dc;
 
 // Map Warna
 $color: (
@@ -27,16 +28,20 @@ $color: (
   "hijau": $hijau,
   "kuning": $kuning,
 );
+
 // Warna background
 $color-bg: (
   "warna-bg": $warna-bg,
 );
+
 // Map warna teks
 $color-text: (
   "abu-abu-text": $abu-abu-text,
   "merah-text": $merah-text,
   "hijau-text": $hijau-text,
+  "biru-text": $biru,
 );
+
 // Warna notif
 $color-notif: (
   "warna-success": $warna-success,
@@ -44,10 +49,10 @@ $color-notif: (
   "warna-error": $warna-error,
 );
 
-// Tipografi
+//* Tipografi
 $font-family-base: "Quicksand", sans-serif;
 
-// Ukuran teks
+//* Ukuran teks
 $text-size: (
   xs: 0.75rem,
   sm: 0.875rem,
@@ -58,7 +63,7 @@ $text-size: (
   "3xl": 1.875rem,
 );
 
-// Font Style
+//* Font Style
 // Ketebalan font
 $font-weight-thin: 100;
 $font-weight-extra-light: 200;
@@ -83,3 +88,44 @@ $font-weights: (
   "bold": $font-weight-bold,
   "black": $font-weight-black,
 );
+
+//* Margin dan Padding 0
+$directions: top, bottom, left, right;
+
+//* Label
+$label-color: $abu-abu;
+$label-font-size: 12px;
+$label-font-weight: $font-weight-medium;
+$label-transition: all 0.2s ease-in-out;
+
+//* Form
+$primary-color: $biru;
+$border-color: rgb(239, 238, 237);
+$input-height: 49px;
+$input-padding: 22px 1rem 5px;
+$input-font-size: 12px;
+
+//* Shadow
+$focus-color: $biru;
+
+//* Ukuran tinggi
+$base-height: 1rem;
+
+//* Check Box
+$color-border: #ccc;
+$color-bg: $putih;
+$color-primary: $biru;
+$radius-sm: 3px;
+$size-control: 1em;
+$gap-left: 1.75em;
+$input-top-offset: 0.25rem;
+$check-thickness: 1px;
+$transition-fast: 0.15s ease-in-out;
+$focus-ring-color: rgba($color-primary, 0.35);
+$focus-ring-width: 3px;
+
+//* Halaman Admin
+//* Sidebar
+$sidebar-width: 180px;
+$sidebar-bg: $biru;
+$sidebar-transition: 0.5s;

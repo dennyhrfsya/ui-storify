@@ -22,11 +22,10 @@ body {
 
 /*Css konten bagian kiri*/
 /*CSS ukuran Hp dan Tablet untuk login*/
-@media (min-width: 512px) {
-  .container-d .left-content-d {
-    max-width: 384px;
-    padding: 2.5rem 2rem;
-  }
+
+.container-d .left-content-d {
+  max-width: 384px;
+  padding: 2.5rem 2rem;
 }
 
 .shadow-d {
@@ -232,9 +231,10 @@ button:not(:disabled) {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .login-background-d {
     background-size: contain !important;
+    background-position: center !important;
   }
 }
 

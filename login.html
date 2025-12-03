@@ -12,10 +12,10 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
     <!-- Link CSS from normalize.css v8.0.1 -->
-    <link rel="stylesheet" type="text/css" href="css/main.chunk.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.chunk.css"> -->
 
     <!-- Link CSS -->
-    <link rel="stylesheet" type="text/css" href="css/mystyle.login.css">
+    <link rel="stylesheet" type="text/css" href="css/storify-login-style.css">
 
     <!-- Link fontGoogles -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;display=swap" rel="stylesheet">
@@ -27,70 +27,71 @@
 
 <body>
     <div>
-        <div class="container-d">
+        <div class="dx-container">
 
-            <!-- Script bagian left content -->
-            <div class="tw-min-h-screen tw-bg-white tw-px-6 tw-py-5 left-content-d">
-                <a href="register.html"
-                    class="tw-flex tw-items-center tw-mb-6 sm:tw-mb-12 hover:tw-no-underline tw-text-primary hover:tw-text-primary-lighter tw-text-sm">
-                    <i class="bi bi-arrow-left"></i>
-                    <span class="tw-block tw-pl-2">Register</span>
+            <!-- Konten bagian kiri -->
+            <div class="dx-min-h-screen bg-white dx-px-6 dx-py-5 dx-left-content">
+                <a href="#"
+                    class="d-flex align-items-center dx-mb-30 dx-text-sm hover:dx-no-underline dx-biru-text hover:dx-biru-muda dx-no-underline">
+                    <img src="images/left-arrow-dx.svg" alt="left-arrow">
+                    <span class="d-block dx-pl-2">Register</span>
                 </a>
-                <h3 class="tw-text-primary tw-text-lg font-bold">Login</h3>
-                <p class="tw-text-primary tw-mb-10">Masuk dengan menggunakan email anda dan password anda</p>
+                <h3 class="dx-biru-text dx-text-lg dx-bold dx-mb-4">Login</h3>
+                <p class="dx-biru-text dx-mb-10">Masuk dengan menggunakan email anda dan password anda</p>
                 <form action="admin.html" autocomplete="off" novalidate>
-                    <div class="tw-mb-4 shadow-d">
-                        <div class="tw-relative">
-                            <input type="email" id="email" placeholder="alamat@email.com" class="form-input input-d">
-                            <label class="form-label">Email</label>
+                    <div class="dx-mb-4 dx-shadow">
+                        <div class="position-relative">
+                            <input type="email" id="email" placeholder="alamat@email.com"
+                                class="dx-form-input dx-input">
+                            <label class="dx-form-label">Email</label>
                         </div>
-                        <div class="tw-relative">
-                            <div class="tw-relative">
+                        <div class="position-relative">
+                            <div class="position-relative">
                                 <input type="password" id="password" placeholder="Masukkan password"
-                                    class="form-password input-d">
-                                <label class="form-label">Password</label>
+                                    class="form-password dx-form-password dx-input">
+                                <label class="dx-form-label">Password</label>
                             </div>
-                            <img src="images/eye.svg" id="icon-login" alt="" class="icon-eye">
+                            <img src="images/eye.svg" id="icon-login" alt="" class="dx-icon-eye">
                         </div>
                     </div>
-                    <div class="tw-mb-5 forgot-d">
+                    <div class="dx-mb-5 dx-min-height-4">
 
                         <!-- Script validasi error -->
-                        <p class="tw-text-red-600 tw-text-xs tw-mb-0">Email harus diisi.</p>
-                        <p class="tw-text-red-600 tw-text-xs tw-mb-0">Password harus diisi.</p>
+                        <p class="dx-merah-text dx-text-xs dx-margin-bottom-0">Email harus diisi.</p>
+                        <p class="dx-merah-text dx-text-xs dx-margin-bottom-0">Password harus diisi.</p>
 
                         <!-- Script validasi success -->
-                        <p class="tw-text-green-600 tw-text-xs tw-mb-0">Anda telah terdaftar. Silahkan Login</p>
+                        <p class="dx-hijau-text dx-text-xs dx-margin-bottom-0">Anda telah terdaftar. Silahkan Login</p>
 
-                        <div class="tw-mt-4 tw-flex tw-justify-between">
-                            <div class="tw-text-xs tw-text-abu checkbox-d">
-                                <input type="checkbox" name="remember">
+                        <div class="dx-mt-4 d-flex justify-content-between">
+                            <div class="position-relative dx-text-xs tw-text-abu dx-checkbox">
+                                <input id="icon-login" type="checkbox" name="remember">
                                 <label>
                                     Ingat saya
                                 </label>
                             </div>
-                            <a href="lupa-password.html"
-                                class="tw-text-xs tw-text-primary hover:tw-text-primary-lighter hover:tw-no-underline">Lupa
+                            <a href="#"
+                                class="dx-text-xs dx-biru-text hover:dx-biru-muda hover:dx-no-underline dx-no-underline">Lupa
                                 password?</a>
                         </div>
-                        <div class="tw-my-4">
-                            <button type="submit" class="btn btn-primary mr-4">Login</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
+                        <div class="dx-my-4">
+                            <button type="submit" class="btn dx-btn-primary">Login</button>
+                            <button type="reset" class="btn dx-btn-secondary">Reset</button>
                         </div>
                     </div>
                 </form>
             </div>
 
-            <!-- Script bagian right content -->
-            <div class="right-content-d">
-                <div class="login-background-d right-content-d"></div>
+            <!-- Konten bagian kanan -->
+            <div class="dx-right-content">
+                <div class="dx-login-background"></div>
             </div>
+
         </div>
     </div>
 
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
         data-cf-settings="5e21a29fae5ef848579f15e8-|49" defer=""></script>
-
     <script type="text/javascript" src="js/javascript-icon-password.js">
     </script>
 

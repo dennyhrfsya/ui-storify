@@ -1,0 +1,37 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0 solid $warna-root;
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: $warna-bg;
+  color: $abu-abu;
+  margin: 0;
+}
+
+.#{$prefix}container {
+  max-width: 100%;
+  padding: 0;
+  position: relative;
+  -webkit-box-align: 1;
+  flex-grow: 1;
+}
+
+//* Sidebar
+.dx-sidebar {
+  @include sidebar-base();
+}
+
+@media (max-width: 768px) {
+  .dx-sidebar {
+    display: block;
+  }
+}
+
+//* Breakpoint ukuran HP dan Tablet
