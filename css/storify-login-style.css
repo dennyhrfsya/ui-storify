@@ -882,65 +882,61 @@ input::placeholder {
   color: #f1c40f;
 }
 
-.hover\:dx-biru-muda:hover {
+.hover\:dx-font-biru-muda:hover {
   color: #266ef4;
   transition: color 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.dx-abu-abu-text {
+.dx-text-abu-abu {
   color: #a0a4a8;
 }
 
-.dx-merah-text {
+.dx-text-abu-terang {
+  color: #ccc;
+}
+
+.dx-text-merah {
   color: #e02424;
 }
 
-.dx-hijau-text {
+.dx-text-hijau {
   color: #32ba7c;
 }
 
-.dx-biru-text {
+.dx-text-biru {
   color: #0652dd;
 }
 
-.dx-warna-success {
-  color: #edf7f3;
+.dx-text-biru-muda {
+  color: #266ef4;
 }
 
-.dx-warna-warning {
-  color: #fcf5e3;
-}
-
-.dx-warna-error {
-  color: #fbe9eb;
-}
-
-.dx-thin {
+.dx-font-thin {
   font-weight: 100;
 }
 
-.dx-light {
+.dx-font-light {
   font-weight: 300;
 }
 
-.dx-regular {
+.dx-font-regular {
   font-weight: 400;
 }
 
-.dx-medium {
+.dx-font-medium {
   font-weight: 500;
 }
 
-.dx-semi-bold {
+.dx-font-semi-bold {
   font-weight: 600;
 }
 
-.dx-bold {
+.dx-font-bold {
   font-weight: 700;
 }
 
-.dx-black {
+.dx-font-black {
   font-weight: 900;
 }
 

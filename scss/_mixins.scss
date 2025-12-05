@@ -109,3 +109,21 @@
 @mixin text-align-direction($direction) {
   text-align: $direction;
 }
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//* Breakpoint map
+@mixin respond-to($breakpoint, $type: min) {
+  @if $type == min {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else if $type == max {
+    @media (max-width: (map-get($breakpoints, $breakpoint) - 1)) {
+      @content;
+    }
+  }
+}

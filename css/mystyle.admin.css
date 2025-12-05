@@ -256,7 +256,7 @@ main {
   position: absolute;
   top: -1.25rem;
   right: 2.5rem;
-  max-width: var(--max-width);
+  max-width: 10rem;
   width: 100%;
   height: auto;
 }

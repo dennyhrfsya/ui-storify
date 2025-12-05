@@ -144,13 +144,88 @@ body {
   height: 2.5rem;
 }
 
-@media (max-width: 768px) {
+.dx-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dx-content-wrap {
+  color: #535353;
+  padding: 30px 0px 0px;
+}
+
+.dx-notice {
+  font-size: 0.875rem;
+  min-height: 125px;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+.dx-notice .dx-notice-icon {
+  right: 1.25rem;
+  position: absolute;
+  top: -1.25rem;
+  right: 2.5rem;
+  max-width: 10rem;
+  width: 100%;
+  height: auto;
+}
+
+.dx-notice-text {
+  padding-left: 15px;
+  padding-right: 15px;
+  --padding-right: calc(10rem + 3rem);
+}
+
+.dx-notice-success .dx-notice-title {
+  color: #edf7f3;
+}
+
+.dx-notice-warning .dx-notice-title {
+  color: #fcf5e3;
+}
+
+.dx-notice-error .dx-notice-title {
+  color: #fbe9eb;
+}
+
+.dx-notice-information .dx-notice-title {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
   .dx-sidebar {
     display: block;
   }
+  .dx-notice .dx-notice-icon {
+    right: 1.25rem !important;
+    max-width: 5.725rem !important;
+  }
+  .dx-notice .dx-notice-body {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .dx-notice .dx-notice-title {
+    font-style: 1rem;
+  }
 }
 @media (min-width: 768px) {
-  .dx-logo-img {
+  .md\:dx-logo-img {
     display: none;
+  }
+  .md\:dx-block {
+    display: block;
+  }
+  .md\:dx-hidden {
+    display: none;
+  }
+  .md\:dx-flex-row {
+    flex-direction: row;
+  }
+  .md\:dx-flex-1 {
+    flex: 1 1 0%;
   }
 }/*# sourceMappingURL=storify-admin-style.css.map */

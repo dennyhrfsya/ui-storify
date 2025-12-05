@@ -113,15 +113,91 @@ body {
   @extend %align-justify-base;
 }
 
-//* Breakpoint ukuran HP dan Tablet
-@media (max-width: 768px) {
-  .dx-sidebar {
-    display: block;
+.dx-truncate {
+  @include truncate;
+}
+
+//* Content
+.dx-content-wrap {
+  color: $abu-abu;
+  padding: 30px 0px 0px;
+}
+
+//* Notice
+.dx-notice {
+  font-size: 0.875rem;
+  min-height: 125px;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  .dx-notice-icon {
+    right: 1.25rem;
+    position: absolute;
+    top: -1.25rem;
+    right: 2.5rem;
+    max-width: 10rem;
+    width: 100%;
+    height: auto;
   }
 }
 
-@media (min-width: 768px) {
-  .dx-logo-img {
+.dx-notice-text {
+  padding-left: 15px;
+  padding-right: 15px;
+  --padding-right: calc(10rem + 3rem);
+}
+
+// Warna notif
+@each $name, $value in $color-notif {
+  // Kelas notif
+  .dx-notice-#{$name} {
+    .dx-notice-title {
+      color: $value;
+    }
+  }
+}
+
+//* Breakpoint ukuran HP dan Tablet
+@include respond-to(md, max) {
+  .dx-sidebar {
+    display: block;
+  }
+  .dx-notice {
+    .dx-notice-icon {
+      right: 1.25rem !important;
+      max-width: 5.725rem !important;
+    }
+    .dx-notice-body {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    .dx-notice-title {
+      font-style: 1rem;
+    }
+  }
+}
+
+@include respond-to(md) {
+  .md\:dx-logo-img {
     display: none;
+  }
+
+  .md\:dx-block {
+    display: block;
+  }
+
+  .md\:dx-hidden {
+    display: none;
+  }
+
+  .md\:dx-flex-row {
+    flex-direction: row;
+  }
+
+  .md\:dx-flex-1 {
+    flex: 1 1 0%;
   }
 }

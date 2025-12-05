@@ -148,7 +148,7 @@ input::placeholder {
   }
 }
 
-.hover\:dx-biru-muda {
+.hover\:dx-font-biru-muda {
   &:hover {
     color: $biru-muda;
     transition: color 0.2s ease-in-out;
@@ -159,15 +159,7 @@ input::placeholder {
 // Warna teks
 @each $name, $value in $color-text {
   // Kelas teks
-  .dx-#{$name} {
-    color: $value;
-  }
-}
-
-// Warna notif
-@each $name, $value in $color-notif {
-  // Kelas notif
-  .dx-#{$name} {
+  .dx-text-#{$name} {
     color: $value;
   }
 }
@@ -183,7 +175,7 @@ input::placeholder {
 //* Font
 // Membuat kelas utilitas untuk setiap ketebalan
 @each $name, $weight in $font-weights {
-  .dx-#{$name} {
+  .dx-font-#{$name} {
     font-weight: $weight;
   }
 }

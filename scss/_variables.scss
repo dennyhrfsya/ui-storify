@@ -37,17 +37,20 @@ $color-bg: (
 
 // Map warna teks
 $color-text: (
-  "abu-abu-text": $abu-abu-text,
-  "merah-text": $merah-text,
-  "hijau-text": $hijau-text,
-  "biru-text": $biru,
+  "abu-abu": $abu-abu-text,
+  "abu-terang": $abu-abu-terang,
+  "merah": $merah-text,
+  "hijau": $hijau-text,
+  "biru": $biru,
+  "biru-muda": $biru-muda,
 );
 
 // Warna notif
 $color-notif: (
-  "warna-success": $warna-success,
-  "warna-warning": $warna-warning,
-  "warna-error": $warna-error,
+  "success": $warna-success,
+  "warning": $warna-warning,
+  "error": $warna-error,
+  "information": $putih,
 );
 
 //* Tipografi
@@ -136,3 +139,16 @@ $font-size-sidebar-li: 0.8rem;
 $padding-sidebar-li: 1rem 1.5rem;
 $active-hover-text-color: $biru-muda;
 $active-hover-bg-color: $warna-bg;
+
+//* Breakpoint map
+$breakpoints: (
+  sm: 640px,
+  // Mobile kecil
+  md: 768px,
+  // Tablet / Mobile besar
+  lg: 1024px,
+  // Laptop / Small desktop
+  xl: 1280px,
+  // Desktop besar
+  xxl: 1536px // Monitor extra besar,,,,,,
+);
