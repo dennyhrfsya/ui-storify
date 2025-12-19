@@ -28,7 +28,7 @@
 
 <body>
 	<main>
-		<div class="dx-container">
+		<div class="dx-container-adm">
 
 			<!-- Sidebar atau Navigasi-->
 			<aside class="dx-sidebar">
@@ -44,8 +44,8 @@
 								id="textSidebarHome">Dashboard</span></a>
 					</li>
 					<li>
-						<a href="elements.html" class="dx-nav-link">
-							<span class="dx-nav-icon bi-inbox"></span><span id="textSidebarInbox">Elements</span></a>
+						<a href="item.html" class="dx-nav-link">
+							<span class="dx-nav-icon bi-box-seam"></span><span id="textSidebarInbox">Items</span></a>
 					</li>
 				</ul>
 			</aside>
@@ -58,13 +58,14 @@
 							<span class="dx-nav-icon-ht bi bi-house-door"></span>Dashboard</a>
 					</li>
 					<li>
-						<a href="elements.html" class="dx-nav-link-ht">
-							<span class="dx-nav-icon-ht bi bi-inbox"></span>Elements</a>
+						<a href="item.html" class="dx-nav-link-ht">
+							<span class="dx-nav-icon-ht bi bi-box-seam"></span>Items</a>
 					</li>
 				</ul>
 			</nav>
 
-			<section class="section">
+			<section class="dx-section">
+				<!-- Header -->
 				<header class="d-flex p-3 align-items-center justify-content-between">
 					<img src="images/logo-storify.png" alt="Logo Storify" class="md:dx-logo-img dx-img-ht">
 					<div class="d-flex">
@@ -74,7 +75,76 @@
 								style="transform: rotate(180deg);">
 						</a>
 					</div>
+					<div>
+						<tabel>
+							<thead>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center float-start">
+											<a type="button" id="dropdownMenu1" data-bs-toggle="dropdown"
+												aria-expanded="false">
+												<img src="images/bell.svg" alt="avatar" class="dx-h-8 dx-ml-4"></a>
+											<span class="dx-text-right dx-font-bold dx-truncate">0</span>
+											<div class="dropdown-menu dx-edit-dropdown" aria-labelledby="dropdownMenu1">
+												<div class="dx-px-4 dx-pt-3">
+													<span class="d-block dx-font-medium dx-truncate">Pesan
+														Masuk:
+													</span>
+													<p class="dx-text-xs dx-cursor-pointer">Anda memiliki <b>0</b> pesan
+														yang belum
+														di baca !</p>
+													<small class="d-block"></small>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex justify-content-end align-items-center float-end">
+
+											<a type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+												aria-expanded="false">
+												<img src="images/avatar-placeholder.png" alt="avatar"
+													class="dx-h-8 dx-ml-4"></a>
+											<span class="dx-text-right dx-font-bold dx-truncate">&nbsp; DENNY</span>
+
+											<div class="dropdown-menu dx-edit-dropdown" aria-labelledby="dropdownMenu2">
+												<div class="dx-px-4 dx-py-3">
+													<span class="d-block dx-font-medium dx-truncate">Hai DENNY
+														HERFANSYA,</span>
+													<small class="d-block dx-text-xs">dennyherfansya10@gmail.com</small>
+													<a href="login.html" class="dx-text-biru hover:dx-no-underline">
+														<div class="tw-px-4 tw-py-3 dx-text-xs">
+															<span>Logout</span>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</thead>
+						</tabel>
+					</div>
 				</header>
+
+				<div class="dx-content-wrap">
+					<div class="container-fluid">
+						<h2 class="md:dx-block dx-text-biru dx-font-bold dx-text-lg dx-mb-4">Dashboard
+						</h2>
+						<div class="dx-notice dx-notice-information">
+							<div class="dx-notice-icon">
+								<img src="images/icon-admin.png" alt="notif" class="img-fluid">
+							</div>
+							<div class="row dx-notice-body">
+								<div class="dx-notice-body-text">
+									<h3 class="dx-notice-title">Selamat Datang !</h3>
+									<p>Anda berhasil masuk <strong>Denny
+											Herfansya</strong></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</div>
 	</main>

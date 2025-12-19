@@ -3,7 +3,11 @@
 @use "inheritance" as *;
 
 //* Section
-.section.dx-sidebar {
+.dx-section {
+  margin-left: 180px;
+  transition: margin-left 0.5s;
+}
+.dx-section.dx-sidebar {
   &--closed {
     margin-left: $sidebar-close-width;
   }
@@ -93,24 +97,103 @@
   --padding-right: calc(10rem + 3rem);
 }
 
-// Warna notif
-@each $name, $value in $color-notif {
-  // Kelas notif
-  .dx-notice-#{$name} {
-    .dx-notice-title {
-      color: $value;
-    }
-  }
-}
-
 // Logo image
 .dx-img-ht {
   width: 120px;
 }
 
+.dx-edit-dropdown {
+  border: 0px;
+  padding: 0px;
+  top: 15px !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  overflow: auto;
+  border-radius: 0.25rem;
+  background-color: $putih;
+  margin-bottom: 0;
+}
+
+.dx-logout {
+  &:hover {
+    background-color: $biru-muda;
+    cursor: pointer;
+  }
+}
+
+//* Content Wrap
+.dx-content-wrap {
+  color: $abu-abu;
+  padding: 30px 0px 0px;
+}
+
+//* Notice
+.dx-notice {
+  font-size: 0.875rem;
+  min-height: 125px;
+  position: relative;
+  padding: 0.75em 1.25em;
+  margin-bottom: 1em;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  // Loop untuk setiap tipe notice
+  @each $name, $bgcolor in $color-notif {
+    @if $name != "information" {
+      &-#{$name} {
+        background-color: $bgcolor;
+        // Jika ada warna title untuk tipe ini
+        @if map-has-key($color-title, $name) {
+          .dx-notice-title {
+            color: map-get($color-title, $name);
+          }
+        }
+      }
+    }
+  }
+  // Information dibuat manual
+  &-information {
+    background-color: map-get($color-notif, "information");
+  }
+}
+
+.dx-notice .dx-notice-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.dx-notice-body-text {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+//* Items Page
+
+// Avatar
+img.dx-avatar {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.dx-user-fullname {
+  font-size: 20px;
+  color: $abu-abu;
+}
+
+.dx-span-inbox {
+  font-size: 12px;
+  color: $abu-abu-text;
+}
+
 //* Breakpoint ukuran HP dan Tablet
 // Sidebar
 @include respond-to(md, max) {
+  .dx-section {
+    margin: 0px 0px 30px 180px;
+    margin-left: 0;
+  }
   .dx-notice {
     .dx-notice-icon {
       right: 1.25rem !important;
@@ -121,7 +204,7 @@
       line-height: 22px;
     }
     .dx-notice-title {
-      font-style: 1rem;
+      font-size: 1rem;
     }
   }
 }
@@ -159,6 +242,7 @@
   .dx-sidebar {
     display: block !important;
   }
+
   .md\:dx-logo-img {
     display: none;
   }
@@ -181,5 +265,8 @@
   // Ukuran Hp dan Tablet
   .dx-sidebar-ht {
     display: none;
+  }
+  .dx-notice-body-text {
+    padding-right: calc(10rem + 3rem);
   }
 }

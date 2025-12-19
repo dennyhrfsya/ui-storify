@@ -33,11 +33,6 @@ $color: (
   "kuning": $kuning,
 );
 
-// Warna background
-$color-bg: (
-  "warna-bg": $warna-bg,
-);
-
 // Map warna teks
 $color-text: (
   "abu-abu": $abu-abu-text,
@@ -54,6 +49,22 @@ $color-notif: (
   "warning": $warna-warning,
   "error": $warna-error,
   "information": $putih,
+);
+
+// Warna title
+$color-title: (
+  "success": $hijau,
+  "error": $merah,
+  "warning": $kuning,
+);
+
+// Warna background
+$color-background: (
+  "bg-putih": $warna-bg,
+  "bg-biru": $biru,
+  "bg-hijau": $hijau,
+  "bg-kuning": $kuning,
+  "bg-merah": $merah,
 );
 
 //* Tipografi
@@ -114,6 +125,7 @@ $input-font-size: 12px;
 
 //* Shadow
 $focus-color: $biru;
+$box-shadow: rgba(17, 17, 17, 0.1) 0px 1px 8px !important;
 
 //* Ukuran tinggi
 $base-height: 1rem;
@@ -146,7 +158,8 @@ $z-layers: (
   // Jendela Modal (di atas overlay)
   "toast": 700,
   // Notifikasi Toast/Alert (paling atas)
-  "dev-tools": 9999 // Untuk debugging atau alat bantu pengembangan,,,,,,,,
+  "dev-tools": 9999
+    // Untuk debugging atau alat bantu pengembangan,,,,,,,,,,,,,,,,,,,,,,,
 );
 
 //* Halaman Admin
@@ -182,5 +195,5 @@ $breakpoints: (
   // Laptop / Small desktop
   xl: 1280px,
   // Desktop besar
-  xxl: 1536px // Monitor extra besar,,,,,,,,,,,,,,,,,,
+  xxl: 1536px // Monitor extra besar,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );

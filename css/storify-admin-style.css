@@ -1,4 +1,9 @@
-.section.dx-sidebar--closed {
+.dx-section {
+  margin-left: 180px;
+  transition: margin-left 0.5s;
+}
+
+.dx-section.dx-sidebar--closed {
   margin-left: 0;
 }
 
@@ -87,27 +92,95 @@
   --padding-right: calc(10rem + 3rem);
 }
 
-.dx-notice-success .dx-notice-title {
-  color: #edf7f3;
-}
-
-.dx-notice-warning .dx-notice-title {
-  color: #fcf5e3;
-}
-
-.dx-notice-error .dx-notice-title {
-  color: #fbe9eb;
-}
-
-.dx-notice-information .dx-notice-title {
-  color: #fff;
-}
-
 .dx-img-ht {
   width: 120px;
 }
 
+.dx-edit-dropdown {
+  border: 0px;
+  padding: 0px;
+  top: 15px !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  overflow: auto;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  margin-bottom: 0;
+}
+
+.dx-logout:hover {
+  background-color: #266ef4;
+  cursor: pointer;
+}
+
+.dx-content-wrap {
+  color: #535353;
+  padding: 30px 0px 0px;
+}
+
+.dx-notice {
+  font-size: 0.875rem;
+  min-height: 125px;
+  position: relative;
+  padding: 0.75em 1.25em;
+  margin-bottom: 1em;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.dx-notice-success {
+  background-color: #edf7f3;
+}
+.dx-notice-success .dx-notice-title {
+  color: #32ba7c;
+}
+.dx-notice-warning {
+  background-color: #fcf5e3;
+}
+.dx-notice-warning .dx-notice-title {
+  color: #f1c40f;
+}
+.dx-notice-error {
+  background-color: #fbe9eb;
+}
+.dx-notice-error .dx-notice-title {
+  color: #e03244;
+}
+.dx-notice-information {
+  background-color: #fff;
+}
+
+.dx-notice .dx-notice-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.dx-notice-body-text {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+img.dx-avatar {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.dx-user-fullname {
+  font-size: 20px;
+  color: #535353;
+}
+
+.dx-span-inbox {
+  font-size: 12px;
+  color: #a0a4a8;
+}
+
 @media (max-width: 767px) {
+  .dx-section {
+    margin: 0px 0px 30px 180px;
+    margin-left: 0;
+  }
   .dx-notice .dx-notice-icon {
     right: 1.25rem !important;
     max-width: 5.725rem !important;
@@ -117,7 +190,7 @@
     line-height: 22px;
   }
   .dx-notice .dx-notice-title {
-    font-style: 1rem;
+    font-size: 1rem;
   }
 }
 .dx-sidebar-ht {
@@ -172,5 +245,8 @@
   }
   .dx-sidebar-ht {
     display: none;
+  }
+  .dx-notice-body-text {
+    padding-right: 13rem;
   }
 }/*# sourceMappingURL=storify-admin-style.css.map */

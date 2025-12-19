@@ -2,7 +2,7 @@
 const toggleSidebarWithClasses = function () {
   // Ambil elemen berdasarkan kelas atau ID unik
   const sidebar = document.querySelector(".dx-sidebar");
-  const section = document.querySelector(".section");
+  const section = document.querySelector(".dx-section");
   const closeBtn = document.getElementById("closeBtn");
   const openBtn = document.getElementById("openBtn");
 
