@@ -231,6 +231,8 @@ span strong {
 @each $name, $value in $color {
   .dx-bl-#{$name} {
     border-left: 5px solid $value;
+    border-start-end-radius: 4px;
+    border-end-end-radius: 4px;
   }
 }
 
@@ -289,7 +291,7 @@ input[type="text"] {
   }
 }
 
-//* Button
+//* Button - Inheritance
 .dx-btn-primary {
   @extend %btn-base;
   color: $putih;
@@ -299,6 +301,10 @@ input[type="text"] {
     background-color: $biru-muda;
     border-color: $biru-muda;
   }
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    }
 }
 
 .dx-btn-secondary {
@@ -311,29 +317,55 @@ input[type="text"] {
     background-color: $biru-muda;
     border-color: $biru-muda;
   }
-}
-
-// Button focus - Nesting
-.dx-btn {
-  &:focus,
-  &.focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  }
-
-  &-primary {
-    &:focus,
-    &.focus {
-      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-    }
-  }
-
-  &-secondary {
     &:focus,
     &.focus {
       outline: 0;
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
+}
+
+.dx-btn-success {
+  @extend %btn-base;
+  color: $putih;
+  background-color: $hijau;
+  &:hover {
+    color: $putih;
+    background-color: $hijau-muda;
+    border-color: $hijau-muda;
+  }
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 60, 0.5);
+  }
+}
+
+.dx-btn-danger {
+  @extend %btn-base;
+  color: $putih;
+  background-color: $merah;
+  &:hover {
+    color: $putih;
+    background-color: $merah-muda;
+    border-color: $merah-muda;
+  }
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+  }
+}
+
+.dx-btn-warning {
+  @extend %btn-base;
+  color: $abu-abu;
+  background-color: $kuning;
+  &:hover {
+    color: $abu-abu;
+    background-color: $kuning-muda;
+    border-color: $kuning-muda;
+  }
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
   }
 }
 
@@ -509,6 +541,78 @@ button:not(:disabled) {
 //* Z-Index
 .dx-z-50 {
   @include z-layer("sticky-header");
+}
+
+//* Badge - Loop
+.dx-badge {
+  display: inline-block;
+  padding: 0.4em 1.025em;
+  font-size: 0.625rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  color: #fff;
+  text-transform: capitalize;
+  white-space: nowrap;
+  cursor: pointer;
+
+  // Generate class untuk tiap warna
+  // Solid variant
+  @each $name, $color in $badge-colors {
+    &-#{$name} {
+      background-color: $color;
+      color: $putih;
+    }
+  }
+
+  // Outline variant 
+  @each $name, $color in $badge-colors { 
+    &-outline-#{$name} 
+    { 
+      background-color: transparent; 
+      border: 2px solid $color; 
+      color: $color; 
+    } 
+  }
+}
+
+//* Form Control
+$form-border: $abu-abu-terang;
+$form-focus: $biru;
+$form-font: 0.95em;
+
+.dx-form-control {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  label {
+    font-weight: 600;
+    margin-bottom: 0.4em;
+    display: block;
+    color: $abu-abu;
+  }
+
+  input {
+    width: 100%;
+    font-size: $form-font;
+    padding: 0.4em 0.8em;
+    border: none;
+    border-bottom: 1px solid $form-border;
+    // background: transparent;
+    background: $putih;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $form-focus;
+    }
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
 }
 
 //* Breakpoint ukuran HP dan Tablet

@@ -223,7 +223,7 @@ li.dx-title-card:first-child {
 }
 .dx-title-card .nav-link.dx-title-card.active, .dx-title-card .nav-link.dx-title-card:hover {
   font-weight: 500;
-  color: #0652dd !important;
+  color: #266ef4 !important;
 }
 .dx-title-card .nav-link.dx-title-card.active::after, .dx-title-card .nav-link.dx-title-card:hover::after {
   content: " ";
@@ -238,6 +238,34 @@ li.dx-title-card:first-child {
   color: #266ef4;
   background-color: #fff;
   text-decoration: none;
+}
+
+.dx-card.dx-card-body {
+  background-color: #fff;
+  color: #a0a4a8;
+  border-radius: 4px;
+  padding: 0 20px;
+}
+.dx-card.dx-card-body span {
+  display: block;
+}
+.dx-card.dx-card-body .dx-card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.dx-card.dx-card-body .dx-card-item:not(:last-child) {
+  border-bottom: 1px solid rgb(239, 238, 237);
+}
+.dx-card.dx-card-body .dx-card-item .dx-card-item-left {
+  text-align: left;
+}
+.dx-card.dx-card-body .dx-card-item .dx-card-item-right {
+  text-align: right;
+}
+.dx-card.dx-card-body .dx-card-item .dx-card-item-right .btn {
+  margin-left: 0.5rem;
 }
 
 @media (max-width: 767px) {

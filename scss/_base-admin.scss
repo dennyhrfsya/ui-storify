@@ -187,7 +187,8 @@ img.dx-avatar {
   color: $abu-abu-text;
 }
 
-// Grid
+
+//* Grid
 .dx-grid {
   display: grid;
   gap: 2rem;
@@ -206,7 +207,7 @@ img.dx-avatar {
   }
 }
 
-// Navlink - Nesting
+//* Navlink - Nesting
 ul.dx-title-card {
   display: flex;
   justify-content: flex-start;
@@ -239,7 +240,7 @@ li.dx-title-card {
     &.active,
     &:hover {
       font-weight: 500;
-      color: $biru !important;
+      color: $biru-muda !important;
 
       &::after {
         content: " ";
@@ -255,6 +256,43 @@ li.dx-title-card {
 
 .li {
   @include li-style($biru-muda, $putih);
+}
+
+//* Card - Nesting
+.dx-card {
+  &.dx-card-body {
+    background-color: $warna-bg-putih;
+    color: $warna-bg-abu-abu;
+    border-radius: 4px;
+    padding: 0 20px;
+
+    span {
+      display: block;
+    }
+
+    .dx-card-item {
+      display: flex;
+      // flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgb(239, 238, 237);
+      }
+
+      .dx-card-item-left {
+        text-align: left;
+      }
+
+      .dx-card-item-right {
+        text-align: right;
+        .btn {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
 }
 
 //* Breakpoint ukuran HP dan Tablet
