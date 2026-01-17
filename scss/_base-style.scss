@@ -253,20 +253,6 @@ span strong {
   @include form-label-style;
 }
 
-//* Form Input
-.dx-input {
-  border-bottom: 0px;
-}
-
-.dx-form-input {
-  @include input-style;
-}
-
-.dx-form-password,
-input[type="text"] {
-  @include input-style;
-}
-
 //* Shadow
 @mixin focus-shadow {
   box-shadow: $focus-color 4px 0px 0px 0px inset;
@@ -576,10 +562,6 @@ button:not(:disabled) {
 }
 
 //* Form Control
-$form-border: $abu-abu-terang;
-$form-focus: $biru;
-$form-font: 0.95em;
-
 .dx-form-control {
   max-width: 400px;
   margin: 0 auto;
@@ -588,7 +570,7 @@ $form-font: 0.95em;
   gap: 1.5rem;
 
   label {
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 0.4em;
     display: block;
     color: $abu-abu;
@@ -613,6 +595,108 @@ $form-font: 0.95em;
       color: #aaa;
     }
   }
+}
+
+//* Modal
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-content {
+  margin: auto;
+  width: 360px;
+  animation: 1s ease 0s 1 normal none running fade-opacity;
+}
+
+.dx-modal-exit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.modal-body {
+  background-color: $modal-bg;
+  border-radius: 0.25rem;
+
+  &-dx-input {
+    flex: 1 1 0%;
+  }
+}
+
+.dx-modal-title{ 
+  position: relative;
+  color: $modal-biru;
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 0 40px;
+  text-align: center;
+  margin: 0 auto 30px;
+  width: fit-content;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    bottom: -10px;
+    width: calc(100% - 80px);
+    height: 2px;
+    background-color: $modal-kuning;
+    border: 0;
+    border-radius: 2px 2px 0 0;
+  }
+}
+
+.dx-modal-form-input {
+  &.dx-password-inputs {
+    max-width: 15rem;
+  }
+
+  &.dx-password-input {
+    position: relative;
+
+    .eyes {
+      position: absolute;
+      right: 0.5em;
+      bottom: 6px;
+      cursor: pointer;
+    }
+  }
+}
+
+.dx-modal-input {
+  &.form-group {
+    margin-bottom: 1em;
+    label {
+      color: $modal-text-gray;
+      font-size: 12px;
+      margin-bottom: 0.5em;
+    }
+
+    input, 
+    textarea {
+      font-size: 12px;
+      border: none;
+      border-radius: 0;
+      outline: none;
+      box-shadow: none;
+
+      &:focus {
+        border-bottom: 1px solid $modal-biru;
+      }
+    }
+
+    input {
+      height: 32px;
+    }
+  }
+}
+
+.dx-modal-footer {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 10px 10px;
 }
 
 //* Breakpoint ukuran HP dan Tablet

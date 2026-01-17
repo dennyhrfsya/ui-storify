@@ -4,6 +4,33 @@
   top: 17px;
 }
 
+.dx-input {
+  border-bottom: 0px;
+}
+
+.dx-form-input {
+  height: 49px;
+  width: 100%;
+  padding: 22px 1rem 5px;
+  font-size: 12px;
+  color: #0652dd;
+  border-radius: 0;
+  border: 1px solid rgb(239, 238, 237);
+  outline: none;
+}
+
+.dx-form-password,
+input[type=text] {
+  height: 49px;
+  width: 100%;
+  padding: 22px 1rem 5px;
+  font-size: 12px;
+  color: #0652dd;
+  border-radius: 0;
+  border: 1px solid rgb(239, 238, 237);
+  outline: none;
+}
+
 .dx-login-background {
   background-repeat: no-repeat;
   background-image: url("../images/bg-login-storify.png");

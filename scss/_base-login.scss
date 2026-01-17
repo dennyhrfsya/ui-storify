@@ -9,6 +9,20 @@
   top: 17px;
 }
 
+//* Form Control
+.dx-input {
+  border-bottom: 0px;
+}
+
+.dx-form-input {
+  @include input-style;
+}
+
+.dx-form-password,
+input[type="text"] {
+  @include input-style;
+}
+
 //* Background bagian kanan
 .dx-login-background {
   background-repeat: no-repeat;

@@ -1022,6 +1022,10 @@ span strong {
   color: #32ba7c;
 }
 
+.dx-text-kuning {
+  color: #f1c40f;
+}
+
 .dx-text-biru {
   color: #0652dd;
 }
@@ -1142,33 +1146,6 @@ span strong {
   font-size: 12px;
   font-weight: 500;
   color: #535353;
-}
-
-.dx-input {
-  border-bottom: 0px;
-}
-
-.dx-form-input {
-  height: 49px;
-  width: 100%;
-  padding: 22px 1rem 5px;
-  font-size: 12px;
-  color: #0652dd;
-  border-radius: 0;
-  border: 1px solid rgb(239, 238, 237);
-  outline: none;
-}
-
-.dx-form-password,
-input[type=text] {
-  height: 49px;
-  width: 100%;
-  padding: 22px 1rem 5px;
-  font-size: 12px;
-  color: #0652dd;
-  border-radius: 0;
-  border: 1px solid rgb(239, 238, 237);
-  outline: none;
 }
 
 .dx-form-input:focus,
@@ -1553,7 +1530,7 @@ button:not(:disabled) {
   gap: 1.5rem;
 }
 .dx-form-control label {
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 0.4em;
   display: block;
   color: #535353;
@@ -1576,6 +1553,98 @@ button:not(:disabled) {
 }
 .dx-form-control input::placeholder {
   color: #aaa;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-content {
+  margin: auto;
+  width: 360px;
+  animation: 1s ease 0s 1 normal none running fade-opacity;
+}
+
+.dx-modal-exit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.modal-body {
+  background-color: #fafafa;
+  border-radius: 0.25rem;
+}
+.modal-body-dx-input {
+  flex: 1 1 0%;
+}
+
+.dx-modal-title {
+  position: relative;
+  color: #0652dd;
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 0 40px;
+  text-align: center;
+  margin: 0 auto 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.dx-modal-title::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  bottom: -10px;
+  width: calc(100% - 80px);
+  height: 2px;
+  background-color: #f1c40f;
+  border: 0;
+  border-radius: 2px 2px 0 0;
+}
+
+.dx-modal-form-input.dx-password-inputs {
+  max-width: 15rem;
+}
+.dx-modal-form-input.dx-password-input {
+  position: relative;
+}
+.dx-modal-form-input.dx-password-input .eyes {
+  position: absolute;
+  right: 0.5em;
+  bottom: 6px;
+  cursor: pointer;
+}
+
+.dx-modal-input.form-group {
+  margin-bottom: 1em;
+}
+.dx-modal-input.form-group label {
+  color: #a0a4a8;
+  font-size: 12px;
+  margin-bottom: 0.5em;
+}
+.dx-modal-input.form-group input,
+.dx-modal-input.form-group textarea {
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+.dx-modal-input.form-group input:focus,
+.dx-modal-input.form-group textarea:focus {
+  border-bottom: 1px solid #0652dd;
+}
+.dx-modal-input.form-group input {
+  height: 32px;
+}
+
+.dx-modal-footer {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 10px 10px;
 }
 
 @media (max-width: 639px) {

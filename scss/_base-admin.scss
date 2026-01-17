@@ -205,6 +205,53 @@ img.dx-avatar {
   @include respond-to(xl, min) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+
+  .dx-bg-putih {
+    background: #fff;
+
+    &:hover {
+      .dx-box-section img {
+        animation: icon-bounce 0.5s ease infinite alternate;
+      }
+    }
+  }
+
+  .dx-box-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dx-box-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $abu-abu;
+    margin: 0;
+  }
+
+  .dx-box-text {
+    font-weight: 800;
+    margin: 0;
+    -webkit-background-clip: text;
+  }
+
+  .dx-box-section {
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dx-img-box {
+      width: 96px;
+    }
+  }
+
+  // Keyframes
+  @keyframes icon-bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+  }
 }
 
 //* Navlink - Nesting

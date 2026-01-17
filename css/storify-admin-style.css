@@ -194,6 +194,46 @@ img.dx-avatar {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+.dx-grid .dx-bg-putih {
+  background: #fff;
+}
+.dx-grid .dx-bg-putih:hover .dx-box-section img {
+  animation: icon-bounce 0.5s ease infinite alternate;
+}
+.dx-grid .dx-box-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dx-grid .dx-box-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #535353;
+  margin: 0;
+}
+.dx-grid .dx-box-text {
+  font-weight: 800;
+  margin: 0;
+  -webkit-background-clip: text;
+}
+.dx-grid .dx-box-section {
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dx-grid .dx-box-section .dx-img-box {
+  width: 96px;
+}
+@keyframes icon-bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
 
 ul.dx-title-card {
   display: flex;

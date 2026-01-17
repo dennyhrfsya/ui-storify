@@ -14,6 +14,7 @@ $merah-muda: #ec5867;
 $merah: #e03244;
 $hijau-muda: #5cc093;
 $hijau: #32ba7c;
+$hijau-tua: #31ba7c;
 $kuning-muda: #f1d255;
 $kuning: #f1c40f;
 $abu-abu-text: #a0a4a8;
@@ -22,6 +23,7 @@ $hijau-text: #32ba7c;
 $warna-success: #edf7f3;
 $warna-warning: #fcf5e3;
 $warna-error: #fbe9eb;
+$warna-clear: #bbd3ff;
 $warna-bg: #fafafa;
 $warna-root: #d2d6dc;
 $warna-bg-putih: #fff;
@@ -44,6 +46,7 @@ $color-text: (
   "abu-terang": $abu-abu-terang,
   "merah": $merah-text,
   "hijau": $hijau-text,
+  "kuning": $kuning,
   "biru": $biru,
   "biru-muda": $biru-muda,
 );
@@ -199,6 +202,10 @@ $color-modal-biru: $biru;
 $color-modal-kuning: $kuning;
 $color-modal-text-label: $abu-abu-terang;
 $color-modal-focus-border: $biru-muda;
+$modal-biru: $biru;
+$modal-kuning: $kuning;
+$modal-text-gray: $abu-abu-text;
+$modal-bg: $warna-bg;
 
 //* Breakpoint map
 $breakpoints: (
@@ -212,3 +219,18 @@ $breakpoints: (
   // Desktop besar
   xxl: 1536px // Monitor extra besar,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
+
+//* Form Control
+$form-border: $abu-abu-terang;
+$form-focus: $biru;
+$form-focus-invalid: $merah;
+$form-font: 0.95em;
+
+//* Card icon
+$dx-icon-colors: (
+  "hijau": $warna-success, 
+  "merah": $warna-error,
+  "kuning": $warna-warning,
+  "biru":  $warna-clear,
+);
+
