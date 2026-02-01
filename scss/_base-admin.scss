@@ -77,6 +77,17 @@
 #openBtn {
 }
 
+.dx-section {
+  flex: 1; // Mengambil sisa ruang di sebelah sidebar
+  display: flex;
+  flex-direction: column;
+  // transition: all 0.3s ease; // Animasi halus saat sidebar buka/tutup
+  overflow-x: hidden;
+  footer {
+    width: 100%;
+  }
+}
+
 .dx-nav-link {
   color: $abu-abu-terang;
   font-size: 0.8rem;
@@ -127,6 +138,17 @@
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  transition: opacity 0.5s ease, transform 0.5s ease, margin-bottom 0.5s ease; // Transisi untuk validasi
+
+  &.hide-notice {
+    opacity: 0;
+    transform: translateY(-20px);
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 0;
+    pointer-events: none;
+  }
 
   .dx-notice-icon {
     right: 1.25rem;
@@ -671,7 +693,6 @@ li.dx-title-card {
     // }
 }
 
-
 //* Tombol Back to Top - Nesting
 .dx-btn-to-top {
     position: fixed;
@@ -763,6 +784,9 @@ li.dx-title-card {
               }
           }
       }
+    }
+    .md\:dx-footer {
+    margin-bottom: 4.375em !important;
     }
 }
 

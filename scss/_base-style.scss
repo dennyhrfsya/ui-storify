@@ -62,12 +62,17 @@ span strong {
   }
 }
 
+html, body {
+  height: 100%;
+}
+
 .#{$prefix}container {
   display: flex;
 }
 
 .#{$prefix}container-adm {
   max-width: 100%;
+  min-height: 100vh;
   padding: 0;
   position: relative;
   // -webkit-box-align: 1;

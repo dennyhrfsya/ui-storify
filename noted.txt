@@ -9,5 +9,4 @@ Notice Warning : #fcf5e3
 Notice Error : #fbe9eb
 
 Next Dev :
-Buat settimeout untuk validasi
-Fix footer agar di paling bawah
+Buat database inventory

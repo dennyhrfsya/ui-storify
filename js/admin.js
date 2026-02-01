@@ -235,3 +235,27 @@ document.querySelectorAll('.counter').forEach(el => {
   // Simulasi: Angka berubah dari 0 ke 5 setelah 2 detik
   setTimeout(() => renderBadge(5), 2000);
 }
+
+//* Validasi
+// document.addEventListener("DOMContentLoaded", () => {
+//   const notice = document.querySelector('#welcomeNotice');
+
+//   // Hapus elemen setelah 5 detik (5000ms)
+//   if (notice) {
+//     setTimeout(() => notice.remove(), 5000);
+//   }
+// });
+const hideWelcomeNotice = () => {
+  const notice = document.querySelector('#welcomeNotice');
+  if (!notice) return;
+
+  setTimeout(() => {
+    notice.classList.add('hide-notice');
+
+    // Hapus total dari DOM setelah animasi selesai jika perlu
+    notice.addEventListener('transitionend', () => notice.remove(), { once: true });
+  }, 5000);
+};
+
+// Panggil fungsi
+hideWelcomeNotice();
