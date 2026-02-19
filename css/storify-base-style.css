@@ -1093,6 +1093,12 @@ html, body {
   color: #fff;
 }
 
+.dx-bg-transparan {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .dx-bl-putih {
   border-left: 5px solid #fff;
   border-start-end-radius: 4px;
@@ -1581,7 +1587,6 @@ button:not(:disabled) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding-right: 2.5rem !important;
 }
 .dx-form-control .dx-input-wrapper input[type=date]::-webkit-calendar-picker-indicator {
   position: absolute;
@@ -1594,6 +1599,9 @@ button:not(:disabled) {
   cursor: pointer;
   opacity: 0;
   -webkit-appearance: none;
+}
+.dx-form-control .dx-input-wrapper input[type=date] {
+  padding-right: 2.5rem !important;
 }
 .dx-form-control .dx-input-wrapper .dx-icon {
   position: absolute;

@@ -219,7 +219,7 @@ html, body {
   }
 }
 
-// Warna background
+//* Warna background
 @each $name, $value in $color-background {
   @if $name == "bg-putih" {
     // Kelas background
@@ -234,6 +234,12 @@ html, body {
       color: $putih;
     }
   }
+}
+
+.dx-bg-transparan {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 //* Border Left
@@ -363,7 +369,6 @@ html, body {
     box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
   }
 }
-
 
 //* Check Box
 .dx-checkbox {
