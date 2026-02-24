@@ -741,6 +741,19 @@ button:not(:disabled) {
       border-bottom: 1px solid $form-focus;
     }
   }
+
+   #select {
+      -webkit-appearance: none;
+      /* Safari/Chrome */
+      -moz-appearance: none;
+      /* Firefox */
+      appearance: none;
+      /* Standar */
+      background: white;
+      /* Hilangkan background default */
+      padding-right: 10px;
+      /* Supaya teks tidak kepotong */
+  }
 }
 
 

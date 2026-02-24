@@ -1696,6 +1696,18 @@ button:not(:disabled) {
   outline: none;
   border-bottom: 1px solid #0652dd;
 }
+.dx-form-control #select {
+  -webkit-appearance: none;
+  /* Safari/Chrome */
+  -moz-appearance: none;
+  /* Firefox */
+  appearance: none;
+  /* Standar */
+  background: white;
+  /* Hilangkan background default */
+  padding-right: 10px;
+  /* Supaya teks tidak kepotong */
+}
 
 body.modal-open {
   overflow: hidden;
