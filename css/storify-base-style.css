@@ -1707,14 +1707,6 @@ body.modal-open {
   animation: 1s ease 0s 1 normal none running fade-opacity;
 }
 
-.dx-modal-exit {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  z-index: 999;
-  cursor: pointer;
-}
-
 .modal-body {
   background-color: #fafafa;
   border-radius: 0.25rem;
