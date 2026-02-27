@@ -756,6 +756,178 @@ button:not(:disabled) {
   }
 }
 
+.dx-form-control-full {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &.dx-form-group {
+    margin-bottom: 1em;
+  }
+
+  label {
+    font-weight: 500;
+    margin-bottom: 0.4em;
+    display: block;
+    color: $abu-abu;
+  }
+
+  // Input tanggal
+  .dx-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input[type="date"] {
+        // 1. Hilangkan appearance standar agar Flatpickr yang ambil kendali
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        // 2. Sembunyikan icon bawaan Android tanpa menghilangkan fungsinya
+        &::-webkit-calendar-picker-indicator {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            // Kuncinya ada di sini: buat transparan, jangan display: none
+            opacity: 0; 
+            -webkit-appearance: none;
+        }
+
+        // Pastikan ada padding kanan agar teks tidak menabrak icon kustom kamu
+        padding-right: 2.5rem !important;
+    }
+
+    .dx-icon {
+        position: absolute;
+        right: 12px;
+        z-index: 2; // Pastikan icon kamu berada di atas input
+        pointer-events: none; // Klik akan menembus icon dan memicu input/flatpickr
+        color: #888;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+
+  input {
+    width: 100%;
+    font-size: $form-font;
+    padding: 0.4em 0.8em;
+    border: none;
+    border-bottom: 1px solid $form-border;
+    // background: transparent;
+    background: $putih;
+    transition: border-color 0.2s ease;
+    
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $form-focus;
+    }
+    
+    &::placeholder {
+      color: #aaa;
+    }
+
+    &.dx-input-invalid:focus {
+      outline: none;
+      border-bottom: 1px solid $form-focus-invalid;
+    }
+
+    &.dx-input-disable {
+      outline: none;
+      border-bottom: 1px solid $form-focus;
+    }
+
+    &::file-selector-button { 
+      padding: 0.3em 0.8em; 
+      margin-right: 0.6em; 
+      border: none; 
+      border-radius: 4px; 
+      background-color: $form-focus; 
+      color: $putih; 
+      font-size: $form-font * 0.85; 
+      cursor: pointer; 
+      transition: background-color 0.2s ease;
+
+      &:hover { 
+        background-color: darken($form-focus, 5%); 
+      }
+    }
+  }
+
+  input[type="file"] {
+    outline: none;
+    border-bottom: none;
+  }
+
+  // Textarea
+  textarea {
+    @extend %form-input;
+    min-height: 120px;
+    resize: vertical;
+
+    &:focus-visible{
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $form-focus;
+    }
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  // Select
+  select {
+    width: 100%;
+    font-size: $form-font;
+    padding: 0.4em 0.8em;
+    border: none;
+    border-bottom: 1px solid $form-border;
+    background: $putih;
+    transition: border-color 0.2s ease;
+
+    // Hilangkan default arrow
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url('/vendor/bootstrap-icons/chevron-down.svg'); // ganti dengan path icon kamu
+    background-repeat: no-repeat;
+    background-position: right 0.8em center;
+    background-size: 1em;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $form-focus;
+    }
+  }
+
+   #select {
+      -webkit-appearance: none;
+      // Safari Chrome
+      -moz-appearance: none;
+      // Firefox 
+      appearance: none;
+      // Standar
+      background: white;
+      // Hilangkan background default
+      padding-right: 10px;
+      // Supaya teks tidak kepotong
+  }
+}
+
 
 //* Modal
 body.modal-open {

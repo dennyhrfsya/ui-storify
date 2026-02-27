@@ -33,7 +33,7 @@
   text-align: justify;
 }
 
-.dx-form-control textarea {
+.dx-form-control textarea, .dx-form-control-full textarea {
   width: 100%;
   font-size: 0.95em;
   padding: 0.4em 0.8em;
@@ -42,14 +42,14 @@
   background: #fff;
   transition: border-color 0.2s ease;
 }
-.dx-form-control textarea:focus {
+.dx-form-control textarea:focus, .dx-form-control-full textarea:focus {
   outline: none;
   border-bottom: 1px solid #0652dd;
 }
-.dx-form-control textarea::-moz-placeholder {
+.dx-form-control textarea::-moz-placeholder, .dx-form-control-full textarea::-moz-placeholder {
   color: #aaa;
 }
-.dx-form-control textarea::placeholder {
+.dx-form-control textarea::placeholder, .dx-form-control-full textarea::placeholder {
   color: #aaa;
 }
 
@@ -1697,6 +1697,146 @@ button:not(:disabled) {
   border-bottom: 1px solid #0652dd;
 }
 .dx-form-control #select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: white;
+  padding-right: 10px;
+}
+
+.dx-form-control-full {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.dx-form-control-full.dx-form-group {
+  margin-bottom: 1em;
+}
+.dx-form-control-full label {
+  font-weight: 500;
+  margin-bottom: 0.4em;
+  display: block;
+  color: #535353;
+}
+.dx-form-control-full .dx-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.dx-form-control-full .dx-input-wrapper input[type=date] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.dx-form-control-full .dx-input-wrapper input[type=date]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-appearance: none;
+}
+.dx-form-control-full .dx-input-wrapper input[type=date] {
+  padding-right: 2.5rem !important;
+}
+.dx-form-control-full .dx-input-wrapper .dx-icon {
+  position: absolute;
+  right: 12px;
+  z-index: 2;
+  pointer-events: none;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dx-form-control-full input {
+  width: 100%;
+  font-size: 0.95em;
+  padding: 0.4em 0.8em;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+.dx-form-control-full input:focus {
+  outline: none;
+  border-bottom: 1px solid #0652dd;
+}
+.dx-form-control-full input::-moz-placeholder {
+  color: #aaa;
+}
+.dx-form-control-full input::placeholder {
+  color: #aaa;
+}
+.dx-form-control-full input.dx-input-invalid:focus {
+  outline: none;
+  border-bottom: 1px solid #e03244;
+}
+.dx-form-control-full input.dx-input-disable {
+  outline: none;
+  border-bottom: 1px solid #0652dd;
+}
+.dx-form-control-full input::file-selector-button {
+  padding: 0.3em 0.8em;
+  margin-right: 0.6em;
+  border: none;
+  border-radius: 4px;
+  background-color: #0652dd;
+  color: #fff;
+  font-size: 0.8075em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.dx-form-control-full input::file-selector-button:hover {
+  background-color: rgb(5.3259911894, 72.7885462555, 196.1740088106);
+}
+.dx-form-control-full input[type=file] {
+  outline: none;
+  border-bottom: none;
+}
+.dx-form-control-full textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.dx-form-control-full textarea:focus-visible {
+  outline: none;
+}
+.dx-form-control-full textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #0652dd;
+}
+.dx-form-control-full textarea::-moz-placeholder {
+  color: #aaa;
+}
+.dx-form-control-full textarea::placeholder {
+  color: #aaa;
+}
+.dx-form-control-full select {
+  width: 100%;
+  font-size: 0.95em;
+  padding: 0.4em 0.8em;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  transition: border-color 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("/vendor/bootstrap-icons/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.8em center;
+  background-size: 1em;
+}
+.dx-form-control-full select:focus {
+  outline: none;
+  border-bottom: 1px solid #0652dd;
+}
+.dx-form-control-full #select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
