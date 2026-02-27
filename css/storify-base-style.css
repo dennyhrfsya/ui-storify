@@ -2028,6 +2028,10 @@ body.modal-open {
   height: 100vh;
 }
 
+.dx-gap-none {
+  gap: none;
+}
+
 @media (max-width: 639px) {
   :root {
     font-size: 14px;

@@ -1115,6 +1115,11 @@ body.modal-open {
   height: 100vh;
 }
 
+//* GAP
+.dx-gap-none {
+  gap: none;
+}
+
 //* Breakpoint ukuran HP dan Tablet
 @include respond-to(sm, max) {
   :root {
