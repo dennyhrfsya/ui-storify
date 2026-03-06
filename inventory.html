@@ -46,10 +46,174 @@
             <a href="user.html" class="dx-nav-link">
               <span class="dx-nav-icon bi-people"></span><span id="textSidebarUser">User</span></a>
           </li>
-          <li>
-            <a href="inventory.html" class="dx-nav-link active">
-              <span class="dx-nav-icon bi-clipboard-data"></span><span id="textSidebarInventory">Inventory</span></a>
+          <style>
+            .dx-sidebar {
+              /* overflow: hidden; */
+              /* HAPUS INI */
+              overflow: visible !important;
+              /* Pastikan ini visible */
+              z-index: 1000;
+            }
+
+            /* Container menu utama harus relative */
+            .dx-has-submenu {
+              position: relative;
+            }
+
+            /* Styling Kartu Melayang di luar sidebar */
+            .dx-floating-card {
+              position: absolute;
+              left: 100%;
+              /* Memindahkannya tepat di sebelah kanan sidebar */
+              top: 0;
+              margin-left: 15px;
+              /* Jarak antara sidebar dan kartu */
+              width: 200px;
+              z-index: 9999;
+              background: #ffffff;
+              border-radius: 12px;
+              box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+              padding: 10px 0;
+              z-index: 999;
+
+              /* Sembunyikan secara default, tampilkan saat hover */
+              display: none;
+            }
+
+            /* Tampilkan saat menu utama di-hover */
+            .dx-has-submenu,
+            .dx-floating-card {
+              display: block;
+            }
+
+            /* Header kecil di dalam kartu */
+            .dx-card-header {
+              padding: 5px 20px;
+              font-size: 0.75rem;
+              font-weight: bold;
+              color: #999;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
+
+            /* Styling Link di dalam kartu putih */
+            .dx-submenu-list {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+
+            .dx-submenu-list li a {
+              display: block;
+              padding: 10px 20px;
+              color: #333;
+              /* Tulisan gelap agar kontras dengan putih */
+              text-decoration: none;
+              font-size: 0.9rem;
+              transition: all 0.2s ease;
+            }
+
+            .dx-submenu-list li a:hover {
+              background-color: #f0f4f8;
+              color: #0056b3;
+              padding-left: 25px;
+              /* Efek geser sedikit saat hover */
+            }
+
+            /* Opsional: Panah kecil (pointer) mengarah ke sidebar */
+            .dx-floating-card::before {
+              content: "";
+              position: absolute;
+              left: -8px;
+              top: 15px;
+              border-top: 8px solid transparent;
+              border-bottom: 8px solid transparent;
+              border-right: 8px solid #ffffff;
+            }
+
+            /* li.dx-has-submenu:hover>.dx-floating-card {
+              display: block !important;
+            } */
+
+            /* Tambahkan ini sebagai gantinya */
+            .dx-floating-card.active {
+              display: block !important;
+            }
+
+            /* Tambahkan pointer agar user tahu ini bisa diklik */
+            .dx-has-submenu>a {
+              cursor: pointer;
+            }
+
+            /* Tambahkan transisi halus jika diinginkan */
+            .dx-floating-card {
+              transition: opacity 0.3s ease;
+            }
+
+            /* Styling dasar icon panah */
+            .dx-arrow-icon {
+              font-size: 0.8rem;
+              transition: transform 0.3s ease;
+              /* Biar muternya halus */
+              margin-left: auto;
+              padding-right: 10px;
+            }
+
+            /* Ketika menu memiliki class 'open', panah berputar 90 derajat */
+            .dx-has-submenu.open .dx-arrow-icon {
+              transform: rotate(90deg);
+            }
+
+            /* Memastikan konten link rapi */
+            .dx-nav-link {
+              display: flex !important;
+              align-items: center;
+              width: 100%;
+            }
+          </style>
+          <li class="dx-has-submenu">
+            <a href="javascript:void(0)"
+              class="dx-nav-link d-flex justify-content-between align-items-center dx-menu-trigger">
+              <div class="d-flex align-items-center">
+                <span class="dx-nav-icon bi-clipboard-data"></span>
+                <span class="dx-menu-text">Inventory</span>
+              </div>
+              <span class="bi bi-chevron-right dx-arrow-icon"></span>
+            </a>
+
+            <div class="dx-floating-card">
+              <div class="dx-card-header">Inventory Options</div>
+              <ul class="dx-submenu-list">
+                <li><a href="#">Stok Gudang</a></li>
+                <li><a href="#">Riwayat Barang</a></li>
+                <li><a href="#">Laporan Bulanan</a></li>
+              </ul>
+            </div>
           </li>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              const parentLi = document.querySelector('.dx-has-submenu');
+              const toggleBtn = document.getElementById('inventoryToggle');
+              const floatingCard = document.getElementById('inventoryCard');
+
+              toggleBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Toggle class untuk kartu dan class untuk putaran panah
+                floatingCard.classList.toggle('active');
+                parentLi.classList.toggle('open');
+              });
+
+              // Tutup jika klik di luar
+              document.addEventListener('click', function (e) {
+                if (!floatingCard.contains(e.target) && e.target !== toggleBtn) {
+                  floatingCard.classList.remove('active');
+                  parentLi.classList.remove('open');
+                }
+              });
+            });
+          </script>
           <li>
             <a href="item.html" class="dx-nav-link">
               <span class="dx-nav-icon bi-file-earmark"></span><span id="textSidebarItem">Item</span></a>
