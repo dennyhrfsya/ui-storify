@@ -55,6 +55,10 @@ span strong {
   cursor: pointer;
 }
 
+.dx-no-cursor {
+  pointer-events: none;
+}
+
 .dx-no-underline {
   text-decoration: none;
   .hover\:dx-no-underline:hover {
@@ -357,10 +361,10 @@ html, body {
 
 .dx-btn-warning {
   @extend %btn-base;
-  color: $abu-abu;
+  color: $putih;
   background-color: $kuning;
   &:hover {
-    color: $abu-abu;
+    color: $putih;
     background-color: $kuning-muda;
     border-color: $kuning-muda;
   }
@@ -368,6 +372,10 @@ html, body {
   &.focus {
     box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
   }
+}
+
+.dx-src-btn {
+  width: 100px;
 }
 
 //* Check Box
@@ -583,12 +591,43 @@ button:not(:disabled) {
   margin-bottom: 1em;
 }
 
+.dx-form-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .dx-form-input-src, 
+  input { 
+    width: 100%;
+    font-size: $form-font;
+    padding: 0.4em 0.8em;
+    border: none;
+    border-bottom: 1px solid $form-border;
+    background: $putih;
+    transition: border-color 0.2s ease;
+    
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $form-focus;
+    }
+    
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+}
+
 .dx-form-control {
   max-width: 400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  &.dx-form-gap-none {
+    gap: 0 !important;
+  }
 
   &.dx-form-group {
     margin-bottom: 1em;
@@ -761,6 +800,10 @@ button:not(:disabled) {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  &.dx-form-gap-none {
+    gap: 0 !important;
+  }
 
   &.dx-form-group {
     margin-bottom: 1em;
@@ -1115,14 +1158,27 @@ body.modal-open {
   height: 100vh;
 }
 
-//* GAP
-.dx-gap-none {
-  gap: none;
-}
-
 //* Breakpoint ukuran HP dan Tablet
 @include respond-to(sm, max) {
   :root {
     font-size: $base-font-size;
   }
 }
+
+@include respond-to(xs, max) {
+  .dx-btn {
+        width: 100%;
+        // margin-bottom: 10px;
+    }
+    .dx-src-btn {
+      width: 100px;
+    }
+}
+
+@include respond-to(md, max) {
+  .col-4.col-md-5.order-1 a.dx-btn {
+      margin-bottom: 0.5em;
+      width: 100%;
+  }
+}
+

@@ -114,6 +114,10 @@ span strong {
   cursor: pointer;
 }
 
+.dx-no-cursor {
+  pointer-events: none;
+}
+
 .dx-no-underline {
   text-decoration: none;
 }
@@ -1293,16 +1297,20 @@ html, body {
 }
 
 .dx-btn-warning {
-  color: #535353;
+  color: #fff;
   background-color: #f1c40f;
 }
 .dx-btn-warning:hover {
-  color: #535353;
+  color: #fff;
   background-color: #f1d255;
   border-color: #f1d255;
 }
 .dx-btn-warning:focus, .dx-btn-warning.focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+}
+
+.dx-src-btn {
+  width: 100px;
 }
 
 .dx-checkbox input {
@@ -1563,12 +1571,44 @@ button:not(:disabled) {
   margin-bottom: 1em;
 }
 
+.dx-form-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.dx-form-wrapper .dx-form-input-src,
+.dx-form-wrapper input {
+  width: 100%;
+  font-size: 0.95em;
+  padding: 0.4em 0.8em;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+.dx-form-wrapper .dx-form-input-src:focus,
+.dx-form-wrapper input:focus {
+  outline: none;
+  border-bottom: 1px solid #0652dd;
+}
+.dx-form-wrapper .dx-form-input-src::-moz-placeholder, .dx-form-wrapper input::-moz-placeholder {
+  color: #aaa;
+}
+.dx-form-wrapper .dx-form-input-src::placeholder,
+.dx-form-wrapper input::placeholder {
+  color: #aaa;
+}
+
 .dx-form-control {
   max-width: 400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+.dx-form-control.dx-form-gap-none {
+  gap: 0 !important;
 }
 .dx-form-control.dx-form-group {
   margin-bottom: 1em;
@@ -1709,6 +1749,9 @@ button:not(:disabled) {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+.dx-form-control-full.dx-form-gap-none {
+  gap: 0 !important;
 }
 .dx-form-control-full.dx-form-group {
   margin-bottom: 1em;
@@ -2028,12 +2071,22 @@ body.modal-open {
   height: 100vh;
 }
 
-.dx-gap-none {
-  gap: none;
-}
-
 @media (max-width: 639px) {
   :root {
     font-size: 14px;
+  }
+}
+@media (max-width: 575px) {
+  .dx-btn {
+    width: 100%;
+  }
+  .dx-src-btn {
+    width: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .col-4.col-md-5.order-1 a.dx-btn {
+    margin-bottom: 0.5em;
+    width: 100%;
   }
 }/*# sourceMappingURL=storify-base-style.css.map */

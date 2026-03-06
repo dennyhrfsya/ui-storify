@@ -422,6 +422,24 @@
                                 <h3 class="dx-table-title dx-with-border dx-table-text-left">Tables</h3>
                                 <p>Halaman data tabel untuk informasi dari pendapat <strong>user</strong>.</p>
 
+                                <div class="row mb-2">
+                                    <div class="col-4 col-md-2 order-1">
+                                        <a href="#" class="dx-btn dx-btn-primary">Tambah</a>
+                                    </div>
+                                    <div class="col-8 col-md-5 order-2 ms-auto">
+                                        <form method="GET" action="#"
+                                            class="d-flex justify-content-end align-items-center">
+                                            <div class="dx-form-wrapper w-50 me-2">
+                                                <input type="text" class="dx-form-input-src" name="search"
+                                                    placeholder="Ketik di sini..." aria-label="Search" value="">
+                                            </div>
+                                            <button type="submit" class="dx-btn dx-btn-secondary dx-src-btn">
+                                                Cari
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+
                                 <div class="dx-table">
                                     <div class="table-responsive">
                                         <table class="table dx-batch-table">
@@ -694,7 +712,7 @@
                         </div>
                     </div>
                     <div class="dx-modal-footer">
-                        <button type="button" class="dx-btn dx-btn-secondary" data-dismiss="modal"
+                        <button type="button" class="dx-btn dx-btn-secondary" data-bs-dismiss="modal"
                             aria-label="Close">Batal</button>
                         <button type="button" class="dx-btn dx-btn-primary">Simpan</button>
                     </div>
