@@ -187,13 +187,25 @@ $z-layers: (
 //* Sidebar
 $sidebar-width: 180px;
 $sidebar-bg: $biru;
+$breakpoint-mobile: 768px;
 $sidebar-transition: 0.5s;
-$sidebar-close-width: 0;
+$sidebar-close-width: 0; // Atau lebar minimal yang Anda inginkan
 $text-color-sidebar-li: $abu-abu-terang;
 $font-size-sidebar-li: 0.8rem;
 $padding-sidebar-li: 1rem 1.5rem;
 $active-hover-text-color: $biru-muda;
 $active-hover-bg-color: $warna-bg;
+// Dropdown melayang dan arrow icon
+$abu-abu-terang: #cccccc;
+$active-hover-text-color: #0652dd;
+$active-hover-bg-color: #fafafa;
+$bg-white: #ffffff;
+$text-dark: #535353;
+$shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+// Dropdown melayang saat mobile
+$active-color: #0652dd;
+$bg-white: #ffffff;
+$shadow: 0 5px 25px rgba(0, 0, 0, 0.2); // Pastikan variabel shadow terdefinisi
 
 //* Modal
 $modal-width: 360px;

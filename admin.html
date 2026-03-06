@@ -31,14 +31,16 @@
 	<main>
 		<div class="dx-container-adm">
 
+
 			<!-- Sidebar atau Navigasi-->
 			<aside class="dx-sidebar">
 				<a id="closeBtn"
-					class="d-flex w-100 justify-content-center dx-text-abu-terang dx-text-sm dx-py-5 align-items-center  hover:dx-no-underline hover:dx-text-abu-terang">
+					class="d-flex w-100 justify-content-center dx-text-abu-terang dx-text-sm dx-py-5 align-items-center hover:dx-no-underline hover:dx-text-abu-terang">
 					<img src="images/left-arrow-dx-white.svg">
 					<span class="dx-block dx-pl-2">Tutup</span>
 				</a>
-				<ul>
+
+				<ul class="dx-sidebar-nav">
 					<li>
 						<a href="admin.html" class="dx-nav-link active" aria-current="page">
 							<span class="dx-nav-icon bi-house-door"></span><span id="textSidebarHome">Dashboard</span></a>
@@ -47,35 +49,83 @@
 						<a href="user.html" class="dx-nav-link">
 							<span class="dx-nav-icon bi-people"></span><span id="textSidebarUser">User</span></a>
 					</li>
-					<li>
-						<a href="inventory.html" class="dx-nav-link">
-							<span class="dx-nav-icon bi-clipboard-data"></span><span id="textSidebarInventory">Inventory</span></a>
+					<li class="dx-has-submenu">
+						<button type="button" class="dx-nav-link dx-menu-trigger">
+							<div class="d-flex align-items-center">
+								<span class="dx-nav-icon bi-clipboard-data"></span>
+								<span class="dx-menu-text">Inventory</span>
+							</div>
+							<span class="bi bi-chevron-right dx-arrow-icon"></span>
+						</button>
+
+						<div class="dx-floating-card">
+							<ul class="dx-submenu-list">
+								<li><a href="inventory.html" class="dx-sub-link">Data Master</a></li>
+								<li><a href="#" class="dx-sub-link">Peminjaman</a></li>
+								<li><a href="#" class="dx-sub-link">Pengembalian</a></li>
+							</ul>
+						</div>
 					</li>
-					<li>
-						<a href="item.html" class="dx-nav-link">
-							<span class="dx-nav-icon bi-file-earmark"></span><span id="textSidebarItem">Item</span></a>
+
+					<li class="dx-has-submenu">
+						<button type="button" class="dx-nav-link dx-menu-trigger">
+							<div class="d-flex align-items-center">
+								<span class="dx-nav-icon bi-file-earmark"></span>
+								<span class="dx-menu-text">Report</span>
+							</div>
+							<span class="bi bi-chevron-right dx-arrow-icon"></span>
+						</button>
+
+						<div class="dx-floating-card">
+							<ul class="dx-submenu-list">
+								<li><a href="item.html" class="dx-sub-link">Report Harian</a></li>
+								<li><a href="#" class="dx-sub-link">Report Bulanan</a></li>
+								<li><a href="#" class="dx-sub-link">Report Tahunan</a></li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</aside>
 
 			<!-- Navigasi untuk Hp -->
-			<nav class="position-fixed bottom-0 w-100 bg-white dx-px-12 dx-z-50 dx-sidebar-ht">
-				<ul class="h-100 d-flex justify-content-between align-items-center">
+			<nav class="position-fixed bottom-0 w-100 bg-white dx-px-4 dx-z-50 dx-sidebar-ht">
+				<ul class="h-100 d-flex justify-content-between align-items-center mb-0 list-unstyled">
 					<li>
-						<a href="admin.html" class="dx-nav-link-ht active" aria-current="page">
-							<span class="dx-nav-icon-ht bi bi-house-door"></span>Dashboard</a>
+						<a href="admin.html" class="dx-nav-link-ht active">
+							<span class="dx-nav-icon-ht bi bi-house-door"></span>
+							<span class="dx-text-ht">Dashboard</span>
+						</a>
 					</li>
 					<li>
 						<a href="user.html" class="dx-nav-link-ht">
-							<span class="dx-nav-icon-ht bi bi-people"></span>User</a>
+							<span class="dx-nav-icon-ht bi bi-people"></span>
+							<span class="dx-text-ht">User</span>
+						</a>
 					</li>
-					<li>
-						<a href="inventory.html" class="dx-nav-link-ht">
-							<span class="dx-nav-icon-ht bi bi-clipboard-data"></span>Inventory</a>
+
+					<li class="dx-has-submenu-ht">
+						<button type="button" class="dx-nav-link-ht dx-menu-trigger-ht">
+							<span class="dx-nav-icon-ht bi bi-clipboard-data"></span>
+							<span class="dx-text-ht">Inventory</span>
+						</button>
+						<div class="dx-mobile-dropdown">
+							<a href="inventory.html">Data Master</a>
+							<a href="#">Peminjaman</a>
+							<a href="#">Pengembalian</a>
+						</div>
 					</li>
-					<li>
-						<a href="item.html" class="dx-nav-link-ht">
-							<span class="dx-nav-icon-ht bi bi-file-earmark"></span>Item</a>
+
+					<li class="dx-has-submenu-ht">
+						<button type="button" class="dx-nav-link-ht dx-menu-trigger-ht">
+							<span class="dx-nav-icon-ht bi bi-file-earmark-text"></span>
+							<span class="dx-text-ht">Report</span>
+						</button>
+
+						<div class="dx-mobile-dropdown dx-dropdown-right">
+							<a href="item.html">Report Harian</a>
+							<a href="#">Report Bulanan</a>
+							<a href="#">Report Tahunan</a>
+						</div>
 					</li>
 				</ul>
 			</nav>

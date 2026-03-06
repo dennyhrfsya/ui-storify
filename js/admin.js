@@ -1,47 +1,64 @@
 // Tombol buka dan tutup
 //* Block scope
-const toggleSidebarWithClasses = function () {
-  // Ambil elemen berdasarkan kelas atau ID unik
-  const sidebar = document.querySelector(".dx-sidebar");
-  const section = document.querySelector(".dx-section");
-  const closeBtn = document.getElementById("closeBtn");
-  const openBtn = document.getElementById("openBtn");
+const toggleSidebarWithClasses = (function () {
+  // Variabel Privat (Closure)
+  const MOBILE_BREAKPOINT = 768;
 
-  // Nama kelas yang akan digunakan untuk status 'tertutup'
-  const CLOSED_CLASS = "dx-sidebar--closed";
+  function init() {
+    const sidebar = document.querySelector(".dx-sidebar");
+    const section = document.querySelector(".dx-section");
+    const closeBtn = document.getElementById("closeBtn");
+    const openBtn = document.getElementById("openBtn");
+    const CLOSED_CLASS = "dx-sidebar--closed";
 
-  // Fungsi untuk BUKA Sidebar (Hapus kelas tertutup)
-  const openSidebar = () => {
-    sidebar.classList.remove(CLOSED_CLASS);
-    section.classList.remove(CLOSED_CLASS);
-    openBtn.style.display = "none"; // Sembunyikan tombol buka
+    // 1. Fungsi Pembantu: Cek apakah saat ini layar Mobile
+    const isMobile = () => window.innerWidth <= MOBILE_BREAKPOINT;
+
+    // 2. Fungsi Reset: Bersihkan style jika pindah ke Mobile
+    const resetStyles = () => {
+      if (isMobile() && openBtn) {
+        openBtn.style.display = ""; // Hapus inline-style agar CSS Media Query menang
+      }
+    };
+
+    const openSidebar = () => {
+      if (isMobile()) return; // Jangan jalankan logika desktop di mobile
+      sidebar.classList.remove(CLOSED_CLASS);
+      section.classList.remove(CLOSED_CLASS);
+      if (openBtn) openBtn.style.display = "none";
+    };
+
+    const closeSidebar = () => {
+      if (isMobile()) return;
+      sidebar.classList.add(CLOSED_CLASS);
+      section.classList.add(CLOSED_CLASS);
+      if (openBtn) openBtn.style.display = "block";
+    };
+
+    // 3. Event Listeners
+    if (closeBtn) closeBtn.addEventListener("click", closeSidebar);
+    if (openBtn) openBtn.addEventListener("click", openSidebar);
+
+    // 4. Handle Window Resize (Sangat Penting!)
+    window.addEventListener("resize", () => {
+      resetStyles();
+      // Jika user membesarkan layar kembali ke desktop, pastikan state tombol sinkron
+      if (!isMobile() && sidebar.classList.contains(CLOSED_CLASS)) {
+        if (openBtn) openBtn.style.display = "block";
+      }
+    });
+
+    // Jalankan reset sekali saat awal load
+    resetStyles();
+  }
+
+  return {
+    run: init
   };
+})();
 
-  // Fungsi untuk TUTUP Sidebar (Tambahkan kelas tertutup)
-  const closeSidebar = () => {
-    sidebar.classList.add(CLOSED_CLASS);
-    section.classList.add(CLOSED_CLASS);
-    openBtn.style.display = "block"; // Tampilkan tombol buka
-  };
-
-  // Event Listener untuk Tombol Tutup (di dalam Sidebar)
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeSidebar);
-  }
-
-  // Event Listener untuk Tombol Buka (di Section/Konten)
-  if (openBtn) {
-    openBtn.addEventListener("click", openSidebar);
-  }
-
-  // Inisialisasi: Pastikan tombol buka tersembunyi jika sidebar tidak memiliki kelas CLOSED_CLASS
-  if (sidebar && !sidebar.classList.contains(CLOSED_CLASS)) {
-    openBtn.style.display = "none";
-  }
-};
-
-// Panggil fungsi
-toggleSidebarWithClasses();
+// Jalankan modul
+document.addEventListener("DOMContentLoaded", toggleSidebarWithClasses.run);
 
 // Password Hidden
 //* Block Scope
@@ -237,6 +254,7 @@ document.querySelectorAll('.counter').forEach(el => {
 }
 
 //* Validasi
+//* DOM, Block Scope dan Arrow Function
 // document.addEventListener("DOMContentLoaded", () => {
 //   const notice = document.querySelector('#welcomeNotice');
 
@@ -259,3 +277,150 @@ const hideWelcomeNotice = () => {
 
 // Panggil fungsi
 hideWelcomeNotice();
+
+
+//* Sidebar dropdown
+//* DOM, Block Scope dan Closure
+const SidebarModule = (function () {
+  // Ini adalah Closure: variabel di dalamnya terproteksi dari luar
+
+  /**
+   * Fungsi Utama untuk Inisialisasi Sidebar
+   * @param {Function} onToggleCallback - Callback opsional saat menu dibuka/tutup
+   */
+  function init(onToggleCallback) {
+    const allSubmenuItems = document.querySelectorAll('.dx-has-submenu');
+    const currentPath = window.location.pathname.split("/").pop();
+
+    allSubmenuItems.forEach(item => {
+      const trigger = item.querySelector('.dx-menu-trigger');
+      const subLinks = item.querySelectorAll('.dx-sub-link');
+
+      // 1. Logika Auto-Active
+      subLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPath && href !== "#") {
+          link.classList.add('active');
+          item.classList.add('active');
+        }
+      });
+
+      // 2. Logika Klik dengan Callback
+      if (trigger) {
+        trigger.onclick = function (e) {
+          e.stopPropagation();
+          e.preventDefault();
+
+          // Tutup menu lain
+          allSubmenuItems.forEach(otherItem => {
+            if (otherItem !== item) otherItem.classList.remove('open');
+          });
+
+          // Toggle menu saat ini
+          const isOpen = item.classList.toggle('open');
+
+          // Menjalankan callback jika disediakan
+          if (typeof onToggleCallback === 'function') {
+            onToggleCallback(item, isOpen);
+          }
+        };
+      }
+    });
+
+    // 3. Event Listener Global
+    document.addEventListener('click', () => {
+      allSubmenuItems.forEach(item => item.classList.remove('open'));
+    });
+
+    document.querySelectorAll('.dx-floating-card').forEach(card => {
+      card.onclick = (e) => e.stopPropagation();
+    });
+  }
+
+  // Mengembalikan object agar fungsi 'init' bisa diakses dari luar
+  return {
+    init: init
+  };
+})();
+
+//* Sidebar dropdown saat Mobile
+//* DOM, Block Scope dan Closure
+// Cara Menjalankannya:
+document.addEventListener('DOMContentLoaded', function () {
+  SidebarModule.init(function (element, isOpen) {
+    // Ini adalah Callback yang akan berjalan setiap kali menu di-klik
+    console.log(`Menu ${element.id} sekarang dalam keadaan: ${isOpen ? 'Terbuka' : 'Tertutup'}`);
+  });
+});
+
+const MobileBottomNav = (function () {
+  // Variabel di bawah ini bersifat privat (hanya bisa diakses di dalam closure ini)
+  const ACTIVE_CLASS = 'active';
+  const OPEN_CLASS = 'open';
+
+  /**
+   * Fungsi internal untuk mendapatkan nama file dari URL saat ini
+   */
+  const getCurrentFileName = () => window.location.pathname.split("/").pop();
+
+  /**
+   * Logika utama untuk inisialisasi
+   */
+  function init() {
+    const submenuItems = document.querySelectorAll('.dx-has-submenu-ht');
+    const allLinks = document.querySelectorAll('.dx-nav-link-ht, .dx-mobile-dropdown a');
+    const currentPath = getCurrentFileName();
+
+    // 1. Logika Auto-Active (Self-Invoking di dalam init)
+    allLinks.forEach(link => {
+      const href = link.getAttribute('href');
+
+      if (href === currentPath && href !== "#") {
+        link.classList.add(ACTIVE_CLASS);
+
+        // Aktifkan parent jika ini adalah link di dalam dropdown
+        const parentSubmenu = link.closest('.dx-has-submenu-ht');
+        if (parentSubmenu) {
+          const trigger = parentSubmenu.querySelector('.dx-nav-link-ht');
+          if (trigger) trigger.classList.add(ACTIVE_CLASS);
+        }
+      }
+    });
+
+    // 2. Logika Klik Dropdown
+    submenuItems.forEach(item => {
+      const trigger = item.querySelector('.dx-menu-trigger-ht');
+
+      if (trigger) {
+        trigger.onclick = function (e) {
+          e.stopPropagation();
+          e.preventDefault(); // Mencegah lonjakan scroll jika menggunakan <a>
+
+          // Tutup menu lain yang sedang terbuka
+          submenuItems.forEach(other => {
+            if (other !== item) other.classList.remove(OPEN_CLASS);
+          });
+
+          // Toggle menu yang diklik
+          item.classList.toggle(OPEN_CLASS);
+        };
+      }
+    });
+
+    // 3. Global Click: Tutup dropdown jika klik di luar navbar
+    document.addEventListener('click', (e) => {
+      // Cek jika klik bukan berasal dari dalam sidebar-ht
+      if (!e.target.closest('.dx-sidebar-ht')) {
+        submenuItems.forEach(item => item.classList.remove(OPEN_CLASS));
+      }
+    });
+  }
+
+  // Mengembalikan object public API
+  return {
+    init: init
+  };
+})();
+
+// Eksekusi saat DOM siap
+document.addEventListener('DOMContentLoaded', MobileBottomNav.init);

@@ -64,25 +64,53 @@
 //* Sidebar
 .dx-sidebar {
   @include sidebar-base();
-}
-.dx-sidebar {
+  transition: width $sidebar-transition, opacity $sidebar-transition;
+
+  // --- LOGIKA RESPONSIVE MOBILE ---
+  @media (max-width: $breakpoint-mobile) {
+    display: none !important; // Paksa hilang di mobile
+  }
+
   &.dx-sidebar--closed {
     width: $sidebar-close-width;
+    
+    // Gunakan pointer-events agar elemen yang transparan tidak bisa diklik
+    pointer-events: none; 
+    
     * {
       opacity: 0;
       transition: opacity $sidebar-transition;
     }
   }
 }
+
 #openBtn {
+  display: none; // Sembunyikan default di desktop (saat sidebar buka)
+  
+  // Tampilkan hanya jika sidebar ditutup (diatur via JS atau class parent)
+  .dx-sidebar--closed ~ .dx-section & {
+     display: block;
+  }
+
+  // --- LOGIKA RESPONSIVE MOBILE ---
+  @media (max-width: $breakpoint-mobile) {
+    display: none !important; // Paksa tombol buka hilang di mobile
+  }
+}
+
+.dx-section {
+  transition: margin-left $sidebar-transition;
+  
+  @media (max-width: $breakpoint-mobile) {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
 }
 
 .dx-section {
   flex: 1; // Mengambil sisa ruang di sebelah sidebar
   display: flex;
   flex-direction: column;
-  // transition: all 0.3s ease; // Animasi halus saat sidebar buka/tutup
-  overflow-x: hidden;
   footer {
     width: 100%;
   }
@@ -116,6 +144,253 @@
 
 .dx-icon-rotate {
   transform: rotate(180deg);
+}
+
+.dx-sidebar {
+  position: fixed;
+  z-index: 1050 !important;
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+
+  // Struktur dx-nav-link sesuai permintaan Anda
+  .dx-nav-link {
+    color: $abu-abu-terang;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center; // Sebagai pengganti -webkit-box-align untuk modernitas
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &.active,
+    &:hover {
+      color: $active-hover-text-color;
+      background-color: $active-hover-bg-color;
+      text-decoration: none;
+    }
+  }
+
+  // Menu dengan submenu
+  .dx-has-submenu {
+    position: relative !important;
+    z-index: 1060 !important;
+
+    // Sinkronisasi warna saat submenu terbuka atau aktif
+    &.active, &.open {
+      > .dx-nav-link {
+        color: $active-hover-text-color;
+        background-color: $active-hover-bg-color;
+      }
+    }
+
+    &.open {
+      .dx-arrow-icon {
+        transform: rotate(90deg);
+      }
+      .dx-floating-card {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    }
+  }
+
+  .dx-arrow-icon {
+    font-size: 0.8rem;
+    transition: transform 0.5s ease;
+    margin-left: auto;
+  }
+
+  // Floating Card Styling
+  .dx-floating-card {
+    display: none !important;
+    position: absolute !important;
+    left: 100% !important;
+    top: 0 !important;
+    margin-left: 15px;
+    width: 200px;
+    background: $bg-white !important;
+    border-radius: 4px;
+    box-shadow: $shadow !important;
+    padding: 10px 0;
+    z-index: 99999 !important;
+    opacity: 0;
+    visibility: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 15px;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid $bg-white;
+    }
+  }
+
+  .dx-submenu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li a {
+      display: block;
+      padding: 10px 20px;
+      color: $text-dark;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+
+      &:hover, &.active {
+        color: $active-hover-text-color !important;
+        padding-left: 25px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+//* Sidebar/Navigasi saat Mobile
+.dx-sidebar-ht {
+  height: 65px; 
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+  overflow: visible !important; 
+  z-index: 1050; 
+
+  ul {
+    overflow: visible !important;
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .dx-nav-link-ht {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #888;
+    font-size: 0.7rem;
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: color 0.3s ease;
+
+    // State Aktif untuk menu utama (Dashboard/User/Inventory)
+    &.active { 
+      color: $active-color !important;
+      
+      .dx-nav-icon-ht {
+        color: $active-color !important;
+      }
+    }
+    
+    .dx-nav-icon-ht {
+      font-size: 1.2rem;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+// --- CSS EXISTING (DIPERBAIKI) ---
+.dx-has-submenu-ht {
+  position: relative;
+  // Jangan gunakan display: flex di sini agar posisi absolut dropdown
+  // merujuk tepat ke kotak <li> induknya.
+
+  .dx-mobile-dropdown {
+    display: none; // Default sembunyi
+    position: absolute;
+    bottom: 75px; // Muncul di atas navbar
+    background: $bg-white;
+    min-width: 160px;
+    border-radius: 12px;
+    box-shadow: $shadow;
+    padding: 5px 0;
+    z-index: 9999 !important;
+
+    // --- LOGIKA POSISI DEFAULT (RATA TENGAH) ---
+    left: 50%;
+    transform: translateX(-50%);
+
+    // --- PERBAIKAN UNTUK ITEM PALING KANAN ---
+    // Gunakan class ini pada <li> Report Anda (lihat HTML di bawah)
+    &.dx-dropdown-right {
+      left: auto !important; // Matikan posisi kiri
+      right: 0 !important;   // Paksa rata kanan dengan <li> induk
+      transform: translateX(0) !important; // Matikan transform tengah
+    }
+
+    // Panah kecil (pointer)
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid $bg-white;
+
+      // --- PANAH UNTUK POSISI TENGAH ---
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    // --- PANAH UNTUK POSISI KANAN ---
+    &.dx-dropdown-right::after {
+      left: auto !important;
+      right: 20px !important; // Geser panah agar sejajar ikon Report
+      transform: translateX(0) !important;
+    }
+
+    a {
+      display: block;
+      padding: 14px 20px;
+      color: #333;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #f1f1f1;
+      text-align: left; // Ubah ke kiri agar teks Report tidak aneh
+
+      &:last-child { border-bottom: none; }
+      
+      &.active {
+        color: $active-color !important;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // State Terbuka
+  &.open {
+    .dx-mobile-dropdown {
+      display: block;
+      animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .dx-nav-link-ht {
+      color: $active-color;
+    }
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateX(-50%) translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(-50%) translateY(0); 
+  }
 }
 
 //* Logo
