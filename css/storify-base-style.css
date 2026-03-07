@@ -38,7 +38,7 @@
   font-size: 0.95em;
   padding: 0.4em 0.8em;
   border: none;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   background: #fff;
   transition: border-color 0.2s ease;
 }
@@ -1034,7 +1034,7 @@ html, body {
 }
 
 .hover\:dx-text-abu-terang:hover {
-  color: #cccccc;
+  color: #ccc;
   font-weight: 500;
   transition: color 0.2s ease-in-out;
   cursor: pointer;
@@ -1481,7 +1481,7 @@ button:not(:disabled) {
 }
 
 .dx-modal-input.dx-form-group label {
-  color: #cccccc;
+  color: #ccc;
   font-size: 12px;
 }
 .dx-modal-input.dx-form-group input,
@@ -1583,7 +1583,7 @@ button:not(:disabled) {
   font-size: 0.95em;
   padding: 0.4em 0.8em;
   border: none;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   background: #fff;
   transition: border-color 0.2s ease;
 }
@@ -1659,7 +1659,7 @@ button:not(:disabled) {
   font-size: 0.95em;
   padding: 0.4em 0.8em;
   border: none;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   background: #fff;
   transition: border-color 0.2s ease;
 }
@@ -1721,7 +1721,7 @@ button:not(:disabled) {
   font-size: 0.95em;
   padding: 0.4em 0.8em;
   border: none;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   background: #fff;
   transition: border-color 0.2s ease;
   appearance: none;
@@ -1802,7 +1802,7 @@ button:not(:disabled) {
   font-size: 0.95em;
   padding: 0.4em 0.8em;
   border: none;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   background: #fff;
   transition: border-color 0.2s ease;
 }
@@ -1864,7 +1864,7 @@ button:not(:disabled) {
   font-size: 0.95em;
   padding: 0.4em 0.8em;
   border: none;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   background: #fff;
   transition: border-color 0.2s ease;
   appearance: none;
@@ -1991,7 +1991,7 @@ body.modal-open {
   width: 14px;
   height: 14px;
   background-color: #fff;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   border-radius: 50%;
   vertical-align: middle;
   margin-right: 0.5em;
@@ -2051,7 +2051,7 @@ body.modal-open {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #cccccc;
+  background-color: #ccc;
   transition: 0.4s;
   border-radius: 20px;
 }

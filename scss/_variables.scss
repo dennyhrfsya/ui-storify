@@ -195,17 +195,10 @@ $font-size-sidebar-li: 0.8rem;
 $padding-sidebar-li: 1rem 1.5rem;
 $active-hover-text-color: $biru-muda;
 $active-hover-bg-color: $warna-bg;
-// Dropdown melayang dan arrow icon
-$abu-abu-terang: #cccccc;
-$active-hover-text-color: #0652dd;
-$active-hover-bg-color: #fafafa;
-$bg-white: #ffffff;
-$text-dark: #535353;
-$shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-// Dropdown melayang saat mobile
-$active-color: #0652dd;
-$bg-white: #ffffff;
-$shadow: 0 5px 25px rgba(0, 0, 0, 0.2); // Pastikan variabel shadow terdefinisi
+$active-color: $biru;
+$bg-white: $warna-bg-putih;
+$text-dark: $abu-abu;
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 
 //* Modal
 $modal-width: 360px;
