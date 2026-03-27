@@ -24,6 +24,9 @@
 
     <!-- Link flatpickr -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Link Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -322,6 +325,19 @@
                             </div>
                         </div>
 
+                        <!-- Bagian Badge Outline -->
+                        <div class="row-cols-1 dx-mb-12 bg-white p-3">
+                            <div class="col justify-content-start">
+                                <h5 class="dx-text-base dx-text-biru dx-font-bold">Bagde Outline</h5>
+
+                                <span class="dx-badge dx-badge-outline-primary">Primary</span>
+                                <span class="dx-badge dx-badge-outline-success">Success</span>
+                                <span class="dx-badge dx-badge-outline-warning">Warning</span>
+                                <span class="dx-badge dx-badge-outline-danger">Danger</span>
+                                <span class="dx-badge dx-badge-outline-info">Info</span>
+                            </div>
+                        </div>
+
                         <!-- Bagian Button -->
                         <div class="row-col-1 dx-mb-12 bg-white p-3">
                             <div class="col justify-content-start">
@@ -371,6 +387,15 @@
                                         <div class="dx-form-group">
                                             <label for="fileinput">File input</label>
                                             <input type="file" id="fileinput" />
+                                        </div>
+                                        <div class="dx-form-group">
+                                            <label for="select2">Select & Search</label>
+                                            <select id="select2" class="select2-js">
+                                                <option value="">Pilih opsi...</option>
+                                                <option value="1">Opsi 1 - Laptop Kantor</option>
+                                                <option value="2">Opsi 2 - Monitor LG</option>
+                                                <option value="3">Opsi 3 - Kursi Gaming</option>
+                                            </select>
                                         </div>
                                         <div class="dx-form-group">
                                             <label for="select">Select</label>
@@ -772,6 +797,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
@@ -783,6 +809,41 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
         data-cf-settings="65818a07c709d4a0ee7047e0-|49" defer=""></script>
+    <!-- JS Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#select2').select2({
+                placeholder: "Pilih opsi...",
+                allowClear: true,
+                width: '100%',
+                // Memaksa search bar muncul meski opsi sedikit
+                minimumResultsForSearch: 0
+            });
+        });
+    </script>
+    <script>
+        // Menunggu seluruh resource (termasuk jQuery) selesai dimuat
+        window.addEventListener('load', function () {
+            if (window.jQuery) {
+                $(document).ready(function () {
+                    // 1. Inisialisasi Select2
+                    var $selectPt = $('.select2-js').select2({
+                        width: '100%'
+                    });
+
+                    // 2. Fitur Auto Focus ke Input Pencarian saat Select2 dibuka
+                    $selectPt.on('select2:open', function () {
+                        // Timeout diperlukan karena Select2 butuh waktu milidetik untuk merender input search
+                        setTimeout(function () {
+                            document.querySelector('.select2-search__field').focus();
+                        }, 50);
+                    });
+                });
+            }
+        });
+    </script>
 
     <!-- Javascript Customs -->
     <script type="text/javascript" src="js/admin.js">
