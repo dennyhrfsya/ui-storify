@@ -6,6 +6,7 @@ $base-font-size: 14px;
 
 //* Variable Warna
 $putih: #fff;
+$hitam: #000;
 $abu-abu-terang: #ccc;
 $abu-abu-2: #a0a4a8;
 $abu-abu: #535353;
@@ -139,7 +140,7 @@ $label-transition: all 0.2s ease-in-out;
 
 //* Form
 $primary-color: $biru;
-$border-color: rgb(239, 238, 237);
+$input-border-color: rgb(239, 238, 237);
 $input-height: 49px;
 $input-padding: 22px 1rem 5px;
 $input-font-size: 12px;
@@ -236,6 +237,10 @@ $form-focus: $biru;
 $form-focus-invalid: $merah;
 $form-font: 0.95em;
 
+//* Single Select
+$single-select-text-color: $hitam;
+$single-select-placeholder-color: $hitam;
+
 //* Card icon
 $dx-icon-colors: (
   "hijau": $warna-success, 
@@ -269,3 +274,5 @@ $pagination-hover-text: $putih;
 //* Back to Top
 $backtotop-color: $biru;
 $backtotop-color-hover: $biru-muda;
+
+

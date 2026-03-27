@@ -709,6 +709,8 @@ button:not(:disabled) {
     }
 
     &.dx-input-disable {
+      background-color: $warna-root;
+      color: $abu-abu;
       outline: none;
       border-bottom: 1px solid $form-focus;
     }
@@ -778,6 +780,14 @@ button:not(:disabled) {
     &:focus {
       outline: none;
       border-bottom: 1px solid $form-focus;
+    }
+
+    &.dx-select-disable {
+      background-color: $warna-root !important;
+      color: $abu-abu;
+      outline: none;
+      border-bottom: 1px solid $form-focus;
+      pointer-events: none;
     }
   }
 
@@ -885,6 +895,8 @@ button:not(:disabled) {
     }
 
     &.dx-input-disable {
+      background-color: $warna-root;
+      color: $abu-abu;
       outline: none;
       border-bottom: 1px solid $form-focus;
     }
@@ -955,6 +967,14 @@ button:not(:disabled) {
       outline: none;
       border-bottom: 1px solid $form-focus;
     }
+
+    &.dx-select-disable {
+      background-color: $warna-root !important;
+      color: $abu-abu;
+      outline: none;
+      border-bottom: 1px solid $form-focus;
+      pointer-events: none;
+    }
   }
 
    #select {
@@ -971,6 +991,104 @@ button:not(:disabled) {
   }
 }
 
+// menghilangkan border dan shadow form-control
+.flatpickr-input.form-control:focus:active {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.select2-container--default {
+    display: block !important;
+    width: 100% !important;
+    max-width: 400px; // Menjaga agar tidak meluap dari batas form
+    box-sizing: border-box;
+
+    // --- 1. Container Utama (Gaya Material) ---
+    .select2-selection--single {
+        height: 35.95px !important;
+        min-height: 35.95px !important;
+        background-color: $putih !important;
+        border: none !important;
+        border-bottom: 1px solid $form-border !important;
+        border-radius: 0 !important;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: border-color 0.2s ease;
+        box-sizing: border-box;
+
+        // Teks yang dipilih & Placeholder
+        .select2-selection__rendered, 
+        .select2-selection__placeholder {
+            line-height: 35.95px !important;
+            font-size: $form-font !important;
+            display: block;
+        }
+
+        .select2-selection__rendered {
+            color: $single-select-text-color !important;
+            padding: 0 2.5rem 0 0.8em !important; // Vertikal 0 karena flex-center
+            width: 100%;
+            text-align: left;
+        }
+
+        .select2-selection__placeholder {
+            color: $single-select-placeholder-color !important;
+        }
+
+        // Hilangkan elemen default
+        .select2-selection__arrow,
+        .select2-selection__clear {
+            display: none !important;
+        }
+    }
+
+    // --- 2. State Fokus & Terbuka ---
+    &.select2-container--focus, 
+    &.select2-container--open {
+        .select2-selection--single {
+            border-bottom: 1px solid $form-focus !important;
+            outline: none !important;
+        }
+    }
+
+    // --- 3. Panel Dropdown ---
+    .select2-dropdown {
+        width: 100% !important;
+        max-width: 400px !important;
+        margin-top: 2px;
+        border: 0px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        background-color: $putih;
+        box-sizing: border-box !important;
+        overflow: hidden;
+        z-index: 9999;
+    }
+
+    // --- 4. Kolom Pencarian di Dalam Dropdown ---
+    .select2-search--dropdown {
+        padding: 10px !important;
+
+        .select2-search__field {
+            border: 1px solid #eee !important;
+            border-radius: 4px !important;
+            padding: 6px 10px !important;
+            outline: none !important;
+            font-size: 0.9rem;
+        }
+    }
+
+    // --- 5. Opsi List Hasil ---
+    .select2-results__option {
+        padding: 8px 12px !important;
+        font-size: 0.9rem;
+
+        &--highlighted[aria-selected] {
+            background-color: $form-focus !important;
+            color: $putih !important;
+        }
+    }
+}
 
 //* Modal
 body.modal-open {
